@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Instance Method</title>
+</head>
+<body>
+    <script>
+
+        //Teori
+        /* 
+            Number memiliki banyak instance method, seperti :
+            1. Number.toLocalString(locale) untuk mengubah number
+            menjadi string sesuai locale 
+            https://www.lansweeper.com/knowledgebase/list-of-currency-culture-codes/
+            2. Number.toString(radix) untuk mengubah number menjadi string sesuai radix
+            https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number#instance_methods
+            instance harus diakses dari object nya
+        */
+
+        const angka = Number(12345);
+        console.log(angka.toString(2));
+        console.log(angka.toLocaleString("id-ID")); //pemisahnya pake titik
+        console.log(angka.toLocaleString("en-US")); //pemisahnya pake koma
+
+    </script>
+    <img src="4_numberInstanceMethod.png" alt="" srcset="">
+</body>
+</html>

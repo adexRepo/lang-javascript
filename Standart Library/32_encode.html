@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encode</title>
+</head>
+<body>
+    <script>
+
+        // Teori --- Encode
+
+        /* 
+            ------------> Ket 1
+            Saat kita menulis URL, kadang kita menambahkan informasi tambahan
+            seperti query parameter misalnya
+            URL sendiri sudah memiliki standart encoding penulisan URL
+            Standart encoding ini dilakukan agar penulisan URL aman ketika diterima
+            oleh server
+            Perlu diingat, Aman disini bukan dalam artian aman secara Security
+            tapi dalam artian informasi URL tidak berubah
+            Contoh paling sederhana, misal, walaupun kita bisa mengirim
+            spasi dalam url, tapi disarankan untuk di encode agar nilai spasi tidak
+            benar-benar terlihat seperti pada URL nya
+
+            //Contoh Masalah Jika Tidak Menggunakan Encode
+            Misalkan ada query parameter dengan nama data, lalu kita ingin
+            mengirimkan nilai kesana
+            Misal nilainya adalah &adek=adek&, alhasil URL nya akan seperti berikkut :
+            http://contoh.com?data=&eko=eko&
+            URL diatas terlihat tidak ada masalah, tapi sebenarnya saat diterima server,
+            parameter data bernilai kosong, kenapa ? karena & dianggap sebagai pemisah antar parameter
+            Artinya tanda / character seperti '&' dan kawan2nya perlu di encode, agar tidak
+            terjadi kesalahan data yang kita kirim
+            
+            //Encode Function
+            ini di gambar di bawah
+            encodeURI(Value)   ; encodeURIComponent(value) ;
+            decodeURI(encoded) ; decodeURIComponent(encoded)
+        */
+    
+       {
+           console.log("-------EncodeDecode URI");
+           // encode URI dan decode URI
+
+            const url = `http://contoth.com/?name=Adek&Krist Moon`;
+            console.log("Original url : "+url);
+            //Original url : http://contoth.com/?name=Adek Krist Moon
+            
+            const encoded = encodeURI(url);
+            console.log("diEncode url : "+encoded);
+            // diEncode url : http://contoth.com/?name=Adek&Krist%20Moon
+            const decoded = decodeURI(encoded);
+            console.log("diDecode url : "+decoded);
+            //diDecode url : http://contoth.com/?name=Adek Krist Moon
+
+        }
+        {
+            console.log("-------EncodeDecode URI Componenet");
+            // encode URI Componenet dan Decode URI Component
+            //perlu diingat jangan encode urlnya , tapi yang
+            //di encode hanya parameternya aja
+            const value =`Adek&Krist=Moon choi`
+            const url = `http://contoth.com/?name=`;
+            console.log("Original url : "+url+value);
+            // Original url : http://contoth.com/?name=Adek&Krist=Moon choi
+            
+            const encoded = encodeURIComponent(value);//Adek%26Krist%3DMoon%20choi
+            console.log("diEncode url : "+url+encoded);
+            // diEncode url : http://contoth.com/?name=Adek%26Krist%3DMoon%20choi
+            
+            const decoded = decodeURIComponent(encoded);//Adek&Krist=Moon choi
+            console.log("diDecode url : "+url+decoded);
+            // diDecode url : http://contoth.com/?name=Adek&Krist=Moon choi
+
+        }
+        
+    </script>
+    <img src="32_encode.png" alt="" srcset="">
+</body>
+</html>

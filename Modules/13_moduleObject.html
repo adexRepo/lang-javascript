@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module Object</title>
+</head>
+<body>
+    <script type="module">
+
+        //Teori
+
+        /* 
+            Ketika sebuah module berisikan banyak sekali export data, maka melakukan import satu persatu
+            akan terlihat berantakan
+            
+            Rekomendasinya ketika kita ingin mengimport module yang sangat banyak export datanya,
+            gunakanlah Module Object
+            
+            Module Object sederhananya adalah object JavaScript yang berisikan attribute hasil
+            yang di export pada module
+
+            Cara membuat module object bisa kita lakukan seperti ini :
+            import* as NamaModuleObjectNya from "./lokasi-module.mjs"
+
+        */
+
+        import* as iniModelObject from "./scripts/13_moduleObject.mjs";
+
+        console.log(iniModelObject.firstName);
+        console.log(iniModelObject.middleName);
+        console.log(iniModelObject.lastName);
+
+        iniModelObject.hello();
+
+        const person = new iniModelObject.Person();
+        console.log(person);
+
+    </script>
+</body>
+</html>

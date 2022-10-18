@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class in Module</title>
+</head>
+<body>
+    <script type="module">
+
+        // Teori
+
+        /* 
+            ----Class di Module
+            Selain function dan juga variabel, dimodule juga kita bisa menambahkan class
+            Secara default, ingat secara default class tsb hanya bisa digunakan / diakses dari dalam module nya saja,
+            tidak bisa diluar module
+
+            jika kita ingin mengekspose class yang kita buat, kita juga bisa menggunakan kata kunci export di awal deklarasi class nya
+        */
+
+        import { Person } from "./scripts/8_class.mjs";
+
+        const person = new Person("Adek!!");
+        person.sayWoy("samsul")
+    </script>
+</body>
+</html>

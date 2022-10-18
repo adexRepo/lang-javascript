@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variabel di JavaScript Module</title>
+</head>
+<body>
+    <script type="module" >
+    
+    /* 
+        ---Variable di module
+        lihat src nya!!
+        Saat kita menggunakan module, ketika kita buat variable, maka variable tersebut hanya berada
+        pada module tersebut, tidak bisa digunakan di module lain
+    
+    */
+    
+    import { name } from "./scripts/7_variable1.mjs";
+    //import { name } from "./scripts/7_variable2.mjs";
+    
+    console.log(name); //string kosong
+    console.log(name); //string kosong
+    
+    //untuk case nama variabel sama ini akan ada chapter tersendiri mengenai ALIAS
+    </script>
+</body>
+</html>

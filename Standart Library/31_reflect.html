@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflect</title>
+</head>
+<body>
+    <script>
+
+        //Teori --- Reflect
+
+        /* 
+            Reflect merupakan class yang digunakan untuk mengeksekusi Java Script Function
+            Reflect tidak punya constructor, dan cara penggunaan Reflect tidak dengan
+            membuat object dengan new Reflect , mirip utility
+            Dengan kata lain, penggunaan Reflect adalah menggunakan static methodnya seperti Math
+            lengkapnya di :
+            https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect
+        */
+        {
+            const person ={};
+
+            Reflect.set(person,"firstName", "Adek");
+            Reflect.set(person,"middleName", "Krist");
+            Reflect.set(person,"lastName", "iyanto");
+
+            console.log(person);
+
+            console.log(Reflect.get(person,"firstName"));
+            console.log(Reflect.get(person,"lastName"));
+            console.log(Reflect.has(person,"firstName"));
+            console.log(Reflect.has(person,"hobii"));
+            console.log(Reflect.has(person,"lastName"));
+            console.log("------------");
+        }
+
+
+
+        {
+            const duck = {
+                name: 'Maurice',
+                color: 'white',
+                greeting: function() {
+                    console.log(`Quaaaack! My name is ${this.name}`);
+                }
+                }
+    
+                const reflecta = Reflect.has(duck, 'color');
+                console.log(reflecta);
+                // true
+                const reflectb = Reflect.has(duck, 'haircut');
+                console.log(reflectb);
+                // false
+
+        }
+    </script>
+</body>
+</html>

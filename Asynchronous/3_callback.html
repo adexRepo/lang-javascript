@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Back</title>
+</head>
+<body>
+    <script>
+
+        //Teori -- Callback
+
+        /* 
+            Callback, merupakan mekanisme untuk memanggil kembali kode yang ada di program dari proses Asynchronous
+            Callback biasanya dibuat dalam bentuk function, dan function tsb akan di eksekusi saat proses Async Selesai
+            Dengan menggunakan Callback, programm kita bisa menerima informasi yang dibutuhkan dari proses yang berjalan
+            secara Async
+            [biasanya] : callback bentuknya adalah function yaw  
+         
+            Contoh Async Method (2 aja)
+            -setTimeout(handler/function,time), digunakan untuk menjalankan Async dalam waktu tertentu
+            -setInterval(handler/function,time) every (interval) handler/function akan dipanggil
+            time satuannya milisecond ya guys
+         */
+
+        setTimeout(() => {
+            console.log("woooii udah 5 detik");
+        }, 5000); //ini berarti 5 detik kemudian akan dipanggil
+
+        var i = 0
+        setInterval(() => {
+            console.log("ini tiap tiga detik : "+i++);
+        }, 3000); //tiap 3 detik function akan dipanggil
+
+        //lihat yg diatas, yg di eksekusi line 33 dulu why ?
+        //karena line 28 itu diset nya 5 detik
+
+        //bisa gini juga guys
+
+        function callBack() {
+            console.log("Hello world");
+        }
+
+        setInterval(() => {
+            callBack();
+        }, 10000); //10 detik
+
+        //kesimpulan :
+        /* 
+            jadi maksudnya callback disini ialah console diatas .. lihat ?
+            akan di callback / dipanggil kembali sampai waktu yg ditentukan
+            sebenarnya dia (setInterval/setTimeout) sudah di eksekusi secara
+            syncronus tapi si console belum karena nunggu waktu yg ada di setInterval / setTimeout
+            selesai baru deh si console di eksekusi, nah proses ini disebut asyncronus
+            karena si console akan di "callback / dipanggil kembali" saat waktunya tiba
+
+            paham gak ? sederhanannya gini cuk,
+            lo megang jadwal/dokumen utk cek kedokter didalam dokumen ada jam nya, 
+            terus lo antri untuk ketemu dokter sebelum lo ketemu dokter dokumen lo
+            bakal di cek petugas dulu..
+            
+            lo antri dan sampai lah lo dipetugas, di cek lah dokumen lo, lalu petugas bilang ke lo
+            gini "nanti dateng lagi yaa sekarang masih jam 07:00 pagi, kan jadwal bapak jam 13:00"
+
+            anggep aja jadwal(jam) lo yg ada di dokumen itu adalah timernya
+            dan kegiatan tubuh lo di cek oleh dokter ialah console nya
+            dan kegiatan lo balik lagi jam 1 siang itu adalah callback
+
+            lalu setTimeout ama setInterval nya apa ?
+            itu dokumen lo didalem dokumen ada timer nya kan ?
+            lo antri terus di cek sama petugas
+            ingat kegiatan antri lo itu itu defaultnya js yaitu syncronus
+
+        */
+    </script>
+
+    <img src="3_hasilCallBack.png" alt="" srcset="">
+</body>
+</html>

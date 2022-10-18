@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+</head>
+<body>
+    <script>
+        // -javaScript sebelumnya dikenal dengan pemrograman berbasis prototype
+        // -bingung kan ?, sama cuk!
+        // -disini bakal dibahas
+
+        // -prototype itu erat kaitannya sama inheritence
+        // -jadi gini, pas kita bikin constructor function
+        // -nah object yg terikat dengan constructor tsb disebut instance
+        // -jadi ALL property(baik itu value maupun method) hanya akan ada didalam instance objectnya
+
+        // -tiap kita bikin constructor function, maka otomatis akan dibikin prototypenya
+        // -contoh kita bikin constructor Person, maka akan ada Person.prototype
+        // -saat kite bikin object instance (kalo tadi adek dan dupin) , maka adek dan dupin tsb
+        // -adalah turunan dari Constructor.prototype nya / dalam case kita Person.prototype
+        // -lihat gambar 7_diagramPrototype.png
+
+        // -buat akses ke prototype nya, kita bisa pilih instance(terserah adek / dupin)
+        // -kita bisa menggunakan keyword __proto__
+
+        //cekidot
+
+        function Person(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.sayHello =(name)=>{
+                console.log(`hello ${name}, my name is ${this.firstName}`);
+            }
+        }
+        // tiap bikin Constructor function maka otomatis punya prototype nya
+        // didefinisikan gini ConstructorName.prototype atau Person.prototype
+        // yang nantinya Person.prototype ini akan disebar seacara otomatis
+        // ke instance object 
+
+        const adek = new Person("Adek", "Kristiyanto"); 
+        // tiap kita bikin ini instance object (adek dan dupin)
+        // maka otomatis akan punya __proto__ dapet dari si person.prototype 
+        const dupin = new Person("Dupin", "Hibernate");
+    
+        console.log(adek);
+        console.log(dupin);
+
+        // kalo kita melakukan perubahan para Person.prototype
+        // maka otomatis pula prototype nya si adek dan dupun berubah juga
+        
+    </script>
+    <img src="7_diagramPrototype.png" alt="" srcset="">
+</body>
+</html>

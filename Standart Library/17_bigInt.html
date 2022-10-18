@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Integer</title>
+</head>
+<body>
+    <script>
+
+        //Teori
+        /* 
+            Big Integer merupakan tipe data Number yang bisa mencakup
+            data angka lebih dari Number.MAX_SAFE_INTEGER
+            Untuk kasus number yang lebih dari itu (diatas) suangat
+            disarankan menggunakan tipe data BigInt
+            Cara penggunaannya BigInt sama saja dengan penggunaan
+            Number dan juga opertaornya
+            lengkapnya :
+            https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt
+        */
+        const a = BigInt(Number.MAX_SAFE_INTEGER);
+        const b = BigInt(Number.MAX_SAFE_INTEGER);
+        
+        const c = a+b
+        console.log(`ini a ${a} : ${typeof a}`);
+        console.log(`ini b ${b} : ${typeof b}`);
+        console.log(`ini c  ${c} : ${typeof c}`);
+    </script>
+</body>
+</html>

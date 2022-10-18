@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Module Loading</title>
+</head>
+<body>
+    <script type="module">
+
+        // Teori
+        /* 
+            Saat kita menggunakan module dengan cara import, maka semua module akan di load di awal
+            Pada kenyataannya, kadang kita tidak ingin meload semua module diawal, kita akan me load module
+            ketika dibutuhkan saja, ini akan menghemat bandwith jaringan juga, karena kita tidak perlu
+            download semua module diawal
+
+            JavaScript mendukung dynamic module loading, caranya kita bisa menggunakan function import(),
+            dimana hasilnya berupa Promise <ModuleObject> (Promise adalah materi yang kompleks, ini akan dibahas
+                di bagian JavaScript Asycronus)
+        */
+
+        import { alertHello } from "./scripts/15_alert.mjs";
+
+        //jadi kalo kita import langsung di load liat di gambar dibawah ini
+
+        //coba comment dibawah ini dulu!!!!!!!!!!!!!!
+        //lalu lihat gambar dan baca dibawahnya
+
+
+        //note karena disini sudah numpuk gue switch ke chapter 16 yee
+    </script>
+
+    <img src="./15_loadAwal.png" alt="" srcset="">
+    <!-- digambar ini ketika cuman ada import aja -->
+    <!-- lihatlah kita mendownload source 15_alert.mjs -->
+    <!-- padahal kagak kita peke, cuman di import doang -->
+    <!-- oleh karena itu dibutuhin fitur ini : -->
+    <!--        Dynamic Module Loading              -->
+</body>
+</html>

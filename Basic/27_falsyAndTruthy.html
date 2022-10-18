@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falsy dan Truthy</title>
+</head>
+<body>
+    <script>
+        /* 
+        Data yang dianggap false
+        - false
+        - 0 / -0 
+        - "" , '', ``
+        - null
+        - undefine
+        - NaN
+         */
+        /* 
+        Data yang dianggap truthy
+        -true
+        -object kosong / isi
+        -array kosong / isi
+        -var isi / kebalikan dari yg falsy
+         */
+
+        let data = 0; 
+        if (data){
+            console.log(`Truthy`);
+        }else{
+            console.log(`Falsy`);
+        }
+    </script>
+</body>
+</html>

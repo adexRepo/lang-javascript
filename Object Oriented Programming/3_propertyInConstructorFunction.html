@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property in Constructor Function</title>
+</head>
+<body>
+    <script>
+        //OOP Old version before ES6
+        function Person() {
+            this.firstName = "";
+            this.lastName = "";
+
+            //firstName dan lastName adalah property
+            //jadi object adek dan krist punya dua property diatas
+            //constructor function
+        }
+        const adek = new Person;
+        adek.firstName ="Adek"; //ini deklarasi isi property jika di person tidak ada begini juga bisa
+        adek.lastName ="Setiawan"; //ini deklarasi isi property
+        const dupin = new Person;
+        dupin.firstName ="Dupin"; //ini deklarasi isi property
+        dupin.lastName ="Kristiyanto"; //ini deklarasi isi property
+        
+        console.log(adek);
+        console.log(dupin);
+    </script>
+</body>
+</html>

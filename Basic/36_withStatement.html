@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>With Statement</title>
+</head>
+<body>
+    <script>
+        //fitur untuk menrutunkan sebuah scope data
+        // mengakses property dalam sebauh data tanpa harus menyebut datanya.
+
+        //TANPA WITH STATEMENT
+        const person ={
+            firstName :"Adek",
+            lastName : "Kristiyanto",
+            dompet : "NULL"
+        }
+        console.log(person.firstName);
+        console.log(person.lastName);
+        console.log(person.dompet);
+        
+        const firstName  = "Budi";
+        //DENGAN WITH STATEMENT
+        with (person){
+            console.log(firstName);
+            console.log(lastName);
+            console.log(dompet);
+        }
+
+        //with statement tidak direkomendasikan
+    </script>
+</html>

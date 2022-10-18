@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body>
+    <script>
+        //ialah kombinasi function dan bundle referensi ke data disekitarnya
+        //function di local scope tidak bisa di akses di luar scope nya
+        //tapi bagi closure KATA SIAPA ?
+        //closure bisa akses closure kemampuan.
+
+        function createAdder(value) {
+            const owner = "ADek";
+            function add(params) {
+                console.info(owner);
+                return value + params;
+            }
+            return add; //si function add di keluarkan di ke global scope
+        }
+        const addTwo = createAdder(5);
+        console.info(addTwo(10));
+        console.info(addTwo(20));
+
+        //cara kerjanya :
+        // function addTwo(params) {
+        //     console.info(owner);
+        //     return 5 + params;
+        // }
+
+    </script>
+</body>
+</html>

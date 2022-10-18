@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring in function parameter</title>
+</head>
+<body>
+    <script>
+        {//diObject
+            //perlu pakai kurung kurawal di parameternya
+            function displayPerson({firstName, middleName, lastName}) {
+                console.info(firstName);
+            console.info(middleName);
+            console.info(lastName);
+        }
+        
+        const person ={
+            firstName :"Adek",
+            middleName :"Kristiyanto",
+            lastName :"Uzumaki"
+        }
+        
+        displayPerson(person);}
+        
+        console.info("-------Batas Scope------");
+        {//diarray
+            function sum([first,second]) {
+                return first + second;
+            }
+
+            console.log(sum([10,2]));
+            console.log(sum([20,10]));
+        }
+
+        
+        console.info("-------Batas Scope------");
+
+        {//default Value di array
+            const names =["Adek"];
+            const[firstName,middleName ="saripudin",lastName="Uzumakie"]= names;
+            console.info(firstName);
+            console.info(middleName);
+            console.info(lastName);
+            //jika di array tidak ada maka bisa ditambahkan default value
+            //baik di array maupun object
+        }
+        
+        console.info("-------Batas Scope------");
+        {//default Value di object
+            const person ={
+            firstName :"Adek",
+            //middleName :null,
+            lastName :"Uzumaki"
+        }
+        
+            let {firstName,middleName ="Jamban",lastName}=person;
+
+            console.info(firstName);
+            console.info(middleName);
+            console.info(lastName);
+        }
+
+        console.info("-------Batas Scope------");
+
+        {//menggunakan variabel lain
+        const person ={
+            firstName :"samsul",
+            middleName :"Krito",
+            lastName :"Uzumaki"
+        }
+        
+            let {firstName :namaDepan,
+                middleName :namaTengah ="Kurniawan",
+                lastName : namaBelakang }=person;
+
+            console.info(namaDepan);
+            console.info(namaTengah);
+            console.info(namaBelakang);
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dengan Module</title>
+</head>
+<body>
+    <script type="module">
+
+        //Teori
+        /* 
+            -----With Module
+            Kalo kita pake module kita bisa selektif memilih bagian mana yang ingin di ekspos keluar
+
+            Secara default kode yang kita buat menggunakan JavaScript Module 
+            tidak bisa digunakan diluar file, kecuali kita memintanya untuk mengekspose keluar
+
+            JS biasa defaultnya semua di ekspose, sedangkan modules semuanya di ekspose
+
+            Membuat module sangat sederhana, kita cukup membuat file JavaScript saja
+            Yang membedakan adalah saat kita akan meload file JavaScript dari HTML, kita tidak menggunakan
+            type javascript lagi, melaikan type module
+            lihat di atas!! di bawah title!
+
+            
+        */
+
+       //kalo gaada import ini maka function sayWoy dan SayDadah serta variable name akan error
+       //titik didepan tulisan script itu artinya relative reference
+        import {sayWoy,sayDadah } from "./scripts/5_woy.mjs";
+        sayWoy('Adek');
+        sayDadah("Samsul")
+        console.log(name); 
+        // name tidak muncul karena ga diimport / di eksport
+        //wajib di import dan eksport gabisa import atau eksport doang
+
+
+        /* 
+            ----- IMPORT
+            Export diguhnakan untuk mengekspose kode di module, jika kita pengen menggunakan kode yang sudah di ekspose
+            di module, kita bisa menggunakan kata kunci import
+            
+            Cara menggunakan kata kunci import seperti diatas tuh 
+            import {isi namaFunction / namaVariabel / namaClass} from "./lokasi-module.js/mjs";
+
+            Module hanya bisa digunakan di module lain, jadi pastikan saat bikin script kita harus menggunakan
+            type module
+
+            saat menggunakan import, kita tidak perlu lagi menambahkan script module src satu per satu,
+            karena sudah di handle oleh Browser secara otomatis ketika menggunakan module
+        */
+
+        //Teori Tambahan
+        /* 
+            ----- FILE  .js dan .mjs
+            Karena File JavaScript Module sebenarnya sama dengan JavaScript text / biasa
+            kadang developer membedakan nama file nya yaitu untuk JavaScript Module menggunakan .mjs
+
+            Hal ini sebenarnya tidak ada kewajiban, hanya saja agar mempermudah ketika tahapan development,
+            kita bisa dengan mudah membedakan mana file JavaScript text dengan mana javaScript Module
+            hanya dengan extension file nya saja
+
+            Pada kali ini gue pake nya .mjs biar gampang ngebedainnya
+            dan agar terlihat keren dikit . . . . . . .
+            . . .
+            chuuuaackks!
+        */
+    </script>
+</body>
+</html>

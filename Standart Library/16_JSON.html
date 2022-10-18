@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+<body>  
+    <Script>
+
+        //TEORI
+
+        /* 
+            Pengenalan cuk
+            JSON singkatan dari JavaScript Object Notation
+            JSON merupakan data String yang bentuknya mirip dengan JavaScript Object
+            now, JSON to much used for communication server and Client
+            link :
+            https://www.json.org/json-en.html
+        
+            JavaScript mendukung konversi data dari String json ke Object ataupun sebaliknya
+            JSON.stringify() digunakan untuk konversi dari js Object ke String json
+            JSON.parse() digunakan untuk konversi dari js String ke Object json
+            https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON        
+            */
+        const person ={
+            firstName :"Adek",
+            lastName :"Kristiyanto",
+            umur :"20",
+            address :{
+                no :"85",
+                country :"Indonesia",
+                city :"Jakarta Tenggara"
+            },
+            hobbies:[
+            "coding",
+            "Game",
+            "Mempersulit hidup orang"]
+        }
+
+        const jsonString1 = JSON.stringify(person);//di set array juga bisa
+        const jsonString2 = JSON.stringify([person]);//di set array juga bisa
+        console.log(jsonString1);
+        console.log(jsonString2);
+        
+        const jsonObject=JSON.parse(jsonString1);
+
+        console.log(jsonObject);
+    </Script>
+</body>
+</html>

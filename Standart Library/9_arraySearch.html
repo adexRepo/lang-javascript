@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Search</title>
+</head>
+<body>
+    <script>
+
+        //Teori ---- Array Search
+        /* 
+            kadang kita ingin mencari sesuatu dalam array
+            1. find(value => boolean) : value        #return nya value
+            2. findIndex(value => boolean) : number  #return nya indexnya 
+            3. includes(value) : boolean             #return nya boolean
+            4. indexOf(value) : number               #return nya indexnya jika tidak ada : -1
+            5. lastIndexOf(value) : number           #return index data terakhir
+        */
+        //note : yang pertama kali ditemukan maka dia yang direturn
+
+        const source = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5];
+
+        console.log(source.find(value =>value >3)); // 4
+        console.log(source.findIndex(value =>value >3)); // index ke 3 
+        console.log(source.includes(7)); //false
+        console.log(source.indexOf(5));  //index ke 4
+        console.log(source.lastIndexOf(3)); //index ke 7 karena di last
+    </script>
+    <img src="9_arraySearch.png" alt="" srcset="">
+</body>
+</html>

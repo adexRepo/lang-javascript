@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Template</title>
+</head>
+<body>
+    <script>
+        //sudah dibahas sebelumnya
+        //string template menggunakan backtick
+        //backtick ada di ` kutip yang sebelah kiri nya angka satu
+
+        const name = "Uchiha Samsul"
+        const template = `Name : ${name}`;
+
+        console.log(template);
+
+        //--------------------------
+        //expression in string template
+        const nilai = 90;
+        const template2 =`${nilai} , lulus : ${nilai >70}`;
+
+        console.info(template2);
+
+        //-------------------------
+        //multiLine string
+        let multiLineString =`
+        Nama Saya : Anonim
+        Pekerjaan : software devOps
+        Anonim Sangat suka mie ayam
+        `
+        document.writeln("<pre>")
+        document.writeln(multiLineString);
+        document.writeln("</pre>")
+            //petik 2 "" dan petik satu ''
+            //tidakbisa muli line
+        </script>
+</body>
+</html>

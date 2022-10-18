@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator TypeOf</title>
+</head>
+<body>
+    <script>
+        //typeOF ini adalah operator untuk melihat tipe data apa
+        //----------- type of di var biasa
+        let A ;
+        const dataB = typeof A;
+        document.writeln(`<p>${dataB}</p>`);
+        
+        //-------------type Of di array
+        let dataA= [undefined,"sampah",15,null,3.4];
+        document.writeln(typeof dataA[2]); 
+        //null dan array disebut object
+        
+        //------------ type of di object
+        let dataC ={
+            "firstName":undefined,
+            "lastName" :"Kristiyanto",
+            "umur" :23,
+            "Uang" : null
+        }
+        document.writeln(`<p>${typeof dataC.Uang}</p>`);
+
+    </script>
+</body>
+</html>

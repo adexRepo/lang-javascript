@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function Generator</title>
+</head>
+<body>
+    <script>
+        //function generator ialah function yang digunakan untuk membuat data generator
+        //data generator adalah data yang bisa di iterasi seperti array
+        //iterasi adalah cari aja di google cuk
+        //cara pake : gunakan tanda * (bintang) setelah kata function
+        //lalu untuk mengembalikan data tiap iterasi bisa pake kata kunci yield diikuti datanya
+        // ingat bukan return
+        //sekaligus pembahasan lazy Evaluation
+        //cekidot contoh sederhana
+        
+        function* createNames(){
+            yield "adek";
+            yield "Kristiyanto";
+            yield "loki";
+        }
+        
+        console.info(createNames()); 
+        //tidak ada datanya karena sifatnya lazy
+        //generator bisa diiterasi tapi tidak bisa di akses
+        //tidak seperti array yang bisa diakses
+        
+        console.log("---------Kompleks------------")
+        //cara dapetin datanya
+        const names = createNames();
+        for (const name of names) {
+            console.info(name)
+        }
+
+        console.log("---------Kompleks------------")
+        //contoh tidak sederhana / kompleks
+        //lazy > data generator itu lazy sifatnya
+        function* buatGanjil(params) {
+            for (let i = 0; i <= params; i++) {
+                if(i%2 ==1){
+                    console.info(`yield ${i}`)
+                    yield i; //bahasa lainnya return i
+                }
+            }
+        }
+
+        //eager > array itu eager sifatnya
+        function buatGanjilArray(params) {
+            const result =[];
+            for (let i = 0; i <= params; i++) {
+                if(i%2 ==1){
+                    console.info(`yield ${i}`)
+                    result.push(i); //masukin i ke result
+                }
+            }
+            return result;
+        }
+
+        //ngambil value semuanya
+        const numbers = buatGanjil(10);
+         for (const number of numbers) {
+            console.log(number);
+        } 
+
+        //kesimpulan :
+        //lazy itu intinya perlu di iterasi dulu
+        // baru bisa kita liat valuenya
+        // jika dipanggil gini buatGanjil(30) > ga keluar nih di konsol
+        //sedangkan
+        //eager itu intinya dia di panggil
+        //biasa aja udh mau keluar valuenya
+        //jika dipanggil gini buatGanjilArray(30) > keluar nih datanya di konsol
+        
+        //uniknya bisa di panggil satu per satu
+        console.log("-----keunikan data generator----")
+        const panggilOneByOne = buatGanjil(10)
+        console.log(panggilOneByOne.next().value);
+        console.log(panggilOneByOne.next().value);
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epoch And Unix Timestamp</title>
+</head>
+<body>
+    <script>
+
+        // Teori
+
+        /* 
+            Dalam menggunakan tipe data waktu, biasanya di semua bahasa pemrograman
+            akan mendukung yang namannya epoch dan unix timestamp
+
+            Epoch dan Unix timestamp merupakan hitungan miliseconds setelah
+            tanggal 1 januari 1970
+
+            JavaScript pun mendukung pembuatan waktu dalam bentuk epoch dan unix timestamp
+            Untuk mendapatkan waktu saat ini dalam bentuk Epoch dan unix timestamp,
+            kita bisa gunakan Date.now()
+
+            untuk mengubah object date ke epoch dan unix timestamp, kita bisa menggunakan function
+            getTime()
+        */
+            const date1 = new Date();
+            console.log(date1.getTime());
+
+            const date2 = new Date(2021,10,10);
+            console.log(date2.getTime());
+
+            const date3 = new Date(2021,10,10,16,15,9,120);
+            console.log(date3.getTime());
+
+            const date4 = new Date(1631351718201);
+            console.log(date4.getTime());
+
+            console.log(Date.now());
+    </script>
+</body>
+</html>

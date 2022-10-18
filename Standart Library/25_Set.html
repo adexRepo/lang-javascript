@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set</title>
+</head>
+<body>
+    <script>
+
+        //Teori --- SET
+
+        /* 
+            Set merupakan implementasi dari struktur data yang berisikan data-data unique
+            Set mirip seperti Array, hanya saja isi datanya selalu unique
+            Jika kita menambahkan data yang sama, maka data hanya akan diterima satu saja
+            Set mengimplementasikan kontrak iterable, sehingga bisa diiterasi secara default
+            https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
+            Gambar dibawah beberapa Instance Method dan property ya guys
+            */
+
+            const set = new Set();
+            set.add("Adek")
+            set.add("Adek")
+            set.add("Krist")
+            set.add("Samsul")
+            
+            console.log(set);
+            set.forEach(value => {
+                console.log(value);
+            });
+    </script>
+    <img src="25_Set.png" alt="" srcset="">
+</body>
+</html>

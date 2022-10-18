@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Class Field</title>
+</head>
+<body>
+    <script>
+
+        //----------------BERITA
+        //Biasanya saat kita ingin nambahin field(Property berisi value)
+        // kita biasanya nambahin di constructornya
+        //But, ada proposal di ES yang mengajukan pembuatan public class field
+        // ditempatkan di  luar constructor, selevel dengan penempatan method
+        // Proposal ini masih belum final (08/2021), namun beberapa browser sudah mendukungnya
+        //https://github.com/tc39/proposal-class-fields (cek disini)
+
+        //kenapa diajuin ? karena property / field di constructor sifatnya public
+        // jadi bisa di akses dari manapun
+
+        //Dalam proposal tersebut juga disebutkan bahwa EcmaScript akan mendukung
+        // akses modifier public dan dan private
+        //Public artinya bisa diakses diluar class, dan private hanya bisa diakses
+        // dari dalam class saja. 
+
+        //Private class field akan dibahas di chapter selanjutnya
+        //Untuk membuat public class kita bisa langsung membuat nama field dengan valuenya
+        // selevel dengan method
+        //Jikalau kita tidak memasukan value di dalam field tersebut
+        // maka field tersebut memiliki value undefined
+    
+        //------------PUBLIC CLASS-----------
+        class Customer {
+            
+            //----Public field
+            firstName;
+            lastName;
+            balance = 0;
+
+            //----Constructor
+            constructor(firstName,lastName){
+                this.firstName = firstName;
+                this.lastName = lastName;
+            }
+
+            //----Method
+            sayHello(){
+
+            }
+        }
+
+        const dupin = new Customer("Dupin", "Hibernate");
+        console.log(dupin);
+
+    </script>
+</body>
+</html>

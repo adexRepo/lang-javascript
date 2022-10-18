@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbol</title>
+</head>
+<body>
+    <script>
+        //Teori
+
+        /* 
+            Symbol merupakan tipe data yang digaransi akan selalu unique
+            setiap kali kita membuat data symbol
+            Symbol kadang banyak digunakan untuk membuat key pada object
+            https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol
+            let sym1 = Symbol()
+            let sym2 = Symbol('foo') 
+            let sym3 = Symbol('foo')
+            note sym2 === sym3 >> false
+        */
+
+        const firstName =Symbol("firstName");
+        const lastName =Symbol("lastName");
+
+        const person ={};
+        person[firstName] = "Adek";
+        person[lastName] = "Kristiyanto";
+
+        console.log(person);
+
+        //static function for di dalam symbol
+
+        /* Kadang agak sulit membuat symbol harus selalu menggunakan variabel
+            Pembuatan symbol juga bisa menggunakan static method Symbol.for(key)
+            Jika kita menggunakan key sama, Symbol yang sama akan selalu dikembalikan
+            kalo kita pakai ket diatas maka baris ke 42 akan false
+            tapi kalo kita menggunakan Symbol.for maka hasilnya true
+        */
+        {
+            console.log(Symbol.for("firstName") === Symbol.for("firstName"));
+            const person = {};
+            person[Symbol.for("firstName")] ="ADEX";
+            person[Symbol.for("lastName")] ="Kristiyanto";
+            
+            console.log(person);
+            console.log(person[Symbol.for("firstName")]);
+            console.log(person[Symbol.for("lastName")]);
+        }
+</script>
+</body>
+</html>

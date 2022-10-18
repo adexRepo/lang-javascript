@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Return Value</title>
+</head>
+<body>
+    <script>
+    //secara default function tidak menghasilkan value apapun
+    //jadi kalo kita memasukan hasil function pada variabel itu akan menghasilkan undefine
+    //kita bisa membuatnya menghasilkan dengan menggunakan kata kunci Return
+    //caranya pakai kata return + data yg ingin dihasilkan
+    //jika ingin menghasilkan data yg banyak bisa pakai array sebagai returnya
+    //cekidot
+
+    //kita buktikan dulu kalo secara default function tidak mengembalikan data apapun
+    function sayHello(firstName, lastName){
+        const say = `Hello ${firstName} ${lastName}`;
+    }
+    const result = sayHello("adek", "Kristiyanto");
+    document.writeln(`<p>tanpa return : ${result}</p>`); //undefine
+    
+    //------sekarang kita gunakan keyWord return
+    function team(siswaA, siswaB){
+        const kelas=`Woi ${siswaA} ${siswaB}`;
+        return kelas;
+    }
+    let hasil = team("blackbeard", "whitebeard");
+    document.writeln(`<p>Dengan return : ${hasil}</p>`); //undefine
+
+    //sederhanannya function yg di return hasilnya
+    //bisa dimasukin kedalam variabel.
+
+    //FUNCTIONRETURN VALUE LEBIH DARI SATU
+    function getFinalValue(value) {
+        if (value > 90) {
+            return "A"
+        }else if(value>80){
+            return "B"
+        }else if(value>70){
+            return "C"
+        }else if(value>60){
+            return "D"
+        }else if(value>50){
+            return "E"
+        }
+    }
+    const finalValue = getFinalValue(76);
+    document.writeln(`<p>${finalValue}</p>`)
+    
+    
+    // MENGHENTIKAN EKSEKUSI DENGAN RETURN
+    var array = ["Adek" , "Kristiyanto", 0,10,22,13,14,35,54,653,234,4,65]
+    function isContains(array, searchValue) {
+        for (const element of array) {
+            console.info(`iterasi element : ${element}`)
+            if(element === searchValue){
+                return true;
+            }
+        }   
+        return false;
+    }
+    let search = 13;
+    const found = isContains (array,search)
+    document.writeln(`<p>data yang dicari : ${found}</p>`)
+</script>
+
+</body>
+</html>

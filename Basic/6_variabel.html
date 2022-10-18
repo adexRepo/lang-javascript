@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variabel</title>
+</head>
+<body>
+    <Script>
+        //tanpa variabel ginih :
+        document.writeln("Adek Kristiyanto");
+        document.writeln("</br>");
+        document.writeln("Software Development");
+        document.writeln(`</br>`);
+        
+        //variabel tempat menyimpan data
+        // kata kunci : var, let dan const
+        var variabelPertama = 'adek';  // ini udah jadul
+        let variabelKedua = 'Kristiyanto'; //ini terbaru
+        const variabelKetiga = 5; //ini konstant atau tidak bisa diubah lagi
+        
+        document.writeln(`</br>`);
+        document.writeln(`var ke 1 --> `+variabelPertama);
+        document.writeln(`</br>`);
+        document.writeln(`var ke 1 --> `+variabelKedua);
+        document.writeln(`</br>`);
+        document.writeln(`var ke 1 --> `+variabelKetiga);
+        document.writeln(`</br>`);
+        document.writeln(`</br>`);
+        
+        //menggunakan String Template
+        document.writeln(`<textarea cols='30' rows='4'>`)
+        document.writeln(`var ke 1 : ${variabelPertama}`);
+        document.writeln(`var ke 2 : ${variabelKedua}`);
+        document.writeln(`var ke 3 : ${variabelKetiga}`);
+        document.writeln(`</textarea>`)
+
+        //semisal kita ingin merubah
+        variabelPertama = 'var a diubah';
+        variabelKedua = 13;
+        variabelKetiga = 20; //error variabel --> cek di inspek / console
+    </Script>
+</body>
+</html>

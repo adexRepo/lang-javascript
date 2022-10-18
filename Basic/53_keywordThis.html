@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyword This</title>
+</head>
+<body>
+    <script>
+        //kata kunci this adalah referensi ke object milik siapa
+        //kalo di html this ialah id nya
+        //kalo object method this ialah referensi object pemilik functionnya
+        //this di global maka Window
+        //this didalam function ialah window
+        //this di nested ialah window
+        //this referensi ke element yang menerima event (dibahas di Document Object Model)
+        
+        console.info(this);
+        function sayHello() {
+            console.info(this);
+            function name() {
+                console.info(this);
+            }
+        }
+        sayHello()
+
+        const person = {
+            name : "adek",
+            umur: 23,
+            sayHellow: function (name) {
+                console.log(`Hello ${name} my name is ${this.name}, umur saya ${this.umur}`);
+            }
+        }
+        person.sayHellow("Eko");
+
+    </script>
+</body>
+</html>

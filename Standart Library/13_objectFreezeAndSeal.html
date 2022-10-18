@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Freeze & Seal</title>
+</head>
+<body>
+    <script>
+
+        // Teori
+        /* 
+        https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+            Secara Default, object bisa diubah atau dihapus properties nya
+            Jika kita ingin mengubah sebuah object menjadi object yang tidak bisa diubah
+             atau dihapus, kita bisa menggunakan beberapa static method
+            Object.freeze() digunakan untuk mengubah object menjadi object yang
+             tidak bisa diubah atau dihapus attribute nya 
+            Object.seal() digunakan untuk mengubah object menjadi object yang
+             tidak bisa dihapus attributenya
+        */
+
+        //Object Freeze
+        console.log('-----Object.freeze----');
+        const person = {
+            firstName: "Adek",
+            lastName : "Kristiyanto"
+        }
+        
+        Object.freeze(person); //silahkan di comment untuk ngecek
+
+        person.firstName = "Dupin" //kita coba ubah firstName nya
+        person.middleName = "and"  //kita coba tambahkan middleName
+        delete person.lastName;    // kita coba delete lastName nya
+
+        console.log(person);
+        //note : freeze gabisa diapa2in attributenya
+        
+        console.log('-----Object.seal----');
+        
+        const masalah = {
+            satu : "laper",
+            tiga : "pusing"
+        }
+
+        Object.seal(masalah); //silahkan di comment untuk ngecek
+
+        masalah.satu = "laper" //kita coba ubah firstName nya
+        masalah.dua = "aaahhsu"  //kita coba tambahkan middleName
+        delete masalah.tiga;    // kita coba delete lastName nya
+        
+        console.log(masalah);
+        //note : seal cuman bisa diubah, gabisa di delete maupun ditambahin
+        </script>
+</body>
+</html>

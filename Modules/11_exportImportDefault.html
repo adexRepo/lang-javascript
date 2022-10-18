@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Export and Import Default</title>
+</head>
+<body>
+    <script type="module">
+
+        //Teori
+        /* 
+            Sampai saat ini, kita selalu melakukan export dengan nama, baik itu nama var, func, dls
+            Ada juga fitur yang bernama export default, ini adalah fitur yang digunakan untuk mempermudah
+            untuk membuat default data di module, dan membantu JavaScript agar kompatibel dengan
+            CommonJS dan AMD module system
+
+            Caranya Export nya :
+            export default namaFunction;
+            export default function(){}
+            export default namaVariable;
+            export default namaVariabel = value;
+            export default NamaClass;
+            export default class{}
+
+            Cara Import nya :
+            import aliasFuction from "./lokasi-module.mjs"
+            import {default as aliasFunction} from "./lokasi-module.mjs"
+            import aliasVariabel from "./lokasi-module.mjs"
+            import {default as aliasVariabel} from "./lokasi-module.mjs"
+            import AliasClass from "./lokasi-module.mjs"
+            import {default as Alias Class} from "./lokasi-module.mjs"
+        
+            Default cuman bisa satu saja, pilih antara func var atau class
+            dan func / var / class nya pun juga cuman satu
+            */
+
+            import { default as sayWoii } from "./scripts/11_sayHello.mjs";
+            sayWoii("samsul")
+            
+
+            //gw males contohin yang lain, intinya gitu yaa sama
+    </script>
+</body>
+</html>

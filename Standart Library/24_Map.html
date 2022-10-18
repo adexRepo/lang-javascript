@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+</head>
+<body>
+    <script>
+
+        //Toeri MAP
+
+        /* 
+            Map merupakan representasi dari struktur data key-value
+            Map mirip dengan tipe data object, hanya saja Map,
+            semua method untuk manipulasi data sudah disediakan
+            Map mengikuti kontrak iterable, sehingga bisa di iterasi secara default
+            https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
+            Perbedaan Object dengan Map dan instance method dan property di map
+            ada di gambar dibawah:
+            map1.png : // perbedaan
+            -Map tidak pake key sedangkan object pakai
+            -Map tipe data apapun sedangkan object string / symbol
+            -Map bisa diketahui jumlah atribute / key sedangkan object bisa
+            -Map tidak bisa di konversi di map, sedangkan object bisa
+            map2.png : //instance method dan property
+            map.set(key,value)
+        */
+        
+        const map = new Map();
+        map.set("Name","Adek Kristiyanto")
+        map.set("Umur","21")
+        map.set("Alamat","25")
+
+        console.log(map);
+        console.log(map.get("Name"));
+        console.log(map.get("Umur"));
+        console.log(map.get("Alamat"));
+
+        for (const element of map) {
+            console.log(`for of ${element[0]} : ${element[1]}`);
+        }
+
+        map.forEach((value,key) => {
+            console.log(`for each ${key} : ${value}`);
+        });
+    </script>
+    <img src="24_map1.png" alt="" srcset="">
+    <img src="24_map2.png" alt="" srcset="">
+</body>
+</html>

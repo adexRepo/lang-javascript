@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function sebagai value</title>
+</head>
+<body>
+    <script>
+        //-----------memasukkan function kedalam variabel
+        function sayHello(params) {
+            console.info(`Hello ${params}`)
+        }
+        
+        sayHello("original : samsul") //cara pertama manggil function
+        let say = sayHello //jangan pake ini : (), kurungan
+
+        say("Dalam Variabel : Budi"); // cara kedua manggil function..
+        //ini disebut function dalam variabel
+
+        //------------function di parameter
+        function giveMeName(callBack) {
+            console.info(`dalam parameter : Eko`)
+        }
+        
+        giveMeName(sayHello); // ini artinya adalah..
+        //function sayHello yang ada diatas tuh..
+        //dimasukin kedalam function giveMeName anjaayy
+
+        //atau bisa juga
+        giveMeName(say); //say isi nya function sayHello
+        //fleksibel banget cok
+    </script>
+</body>
+</html>

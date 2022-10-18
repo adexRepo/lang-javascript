@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert Prompt and Confirm</title>
+</head>
+<body>
+    <script>
+        //Alert digunakan untuk membuat peringatan text berupa PopUp
+        //Prompt ialah inputan didalam popUp
+        //Confirm ialah inputan Boolean 
+        alert(`Hallo Aku PopUp Alert :)`);
+        let inputPrompt = prompt(`kalo Aku PopUp Prompt, anda ingin input apa ? `);
+        alert(`oke anda input : ${inputPrompt}`);
+        const inputConfirm = confirm(`Apakah anda manusia ? `);
+        if(inputConfirm){
+            let name = prompt(`Siapakah Nama Anda ? `);
+            alert (`Hallo ${name}`);
+            alert(`Sudah dulu ya ${jenis}, PopUp mau bobo siang..`);
+        }else{
+            let jenis = prompt(`Wah, lalu anda apa ? `);
+            alert(`ooooohhh ${jenis}`);
+            alert(`Sudah dulu ya ${jenis}, PopUp mau bobo siang..`);
+        }
+    </script>
+</body>
+</html>

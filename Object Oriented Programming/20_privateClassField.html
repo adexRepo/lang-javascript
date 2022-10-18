@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Class Field</title>
+</head>
+<body>
+    <script>
+
+        //Secara default, saat kita nambahin field, maka field itu
+        // bisa diakses dari object instance manapun
+        //Jika kita ingin bikin field bersifat private(hanya bisa diakses di dalam class),
+        // kita bisa menggunakan tanda # (pagar) sebeum nama field nya
+        //Ini dinamakan Private Class Field, dan hanya bisa diakses dari dalam class saja.
+        // artinya bisa diakses didalam class saja ialah
+        //Constructor atau method2 yang ada didalam class bisa mengakses field tersebut.
+
+        // tujuan ada private agar tidak bisa diubah dari luar class
+
+        class Counter {
+            #conter = 0;
+
+            increment(){
+                this.#conter++;
+            }
+
+            decrement(){
+                this.#conter--;
+            }
+
+            get (){
+                return this.#conter;
+            }
+        }
+
+        const counter = new Counter();
+
+        counter.decrement();
+        counter.decrement();
+        counter.decrement();
+
+        console.log(counter.get());
+        counter.counter = 100; // ini usaha untuk merubah
+        //eh ternyata gabisa karena private
+        // dan itungannya dia kayak bikin field public baru
+        
+        //counter.#counter = 100;
+        //ini (baris 49) kalo dilepas comment nya error
+
+        console.log(counter);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regular Expression in String</title>
+</head>
+<body>
+  <script>
+
+    // Teori -- RegExp in String
+
+    /* 
+      lengkapnya lihat di gambar
+      1. match(regex) return nya array -- cari semua data
+      2. search(regex) return index -- cari data sesuai regex
+      3. replace(regex,value) -- ngubah data regex sesuai value
+      4. replaceAll(regex,value) -- ngubah semua data dgn value sesuai regex
+      khusus utk replaceAll itu wajib modifiernya g
+      5. split(regex) return nya array, ngubah string dgn regex
+      note semua method ini tidak merubah value awalnya
+      */
+
+     const string = "ade ado aki eka adi ajang adux"
+     console.log(string.match(/ad[aiueo]/ig));
+     console.log(string.search(/ak[aiueo]/ig)); //index
+     console.log(string.replace(/ad[aiueo]/ig, "samsul")); //jika ga pake global hanya 1 aja
+     console.log(string.replaceAll(/ad[aiueo]/ig, "samsul"));
+     console.log(string.split(/ad/ig)); //hilang
+  </script>
+  <img src="28_regExpInString.png" alt="" srcset="">
+</body>
+</html>

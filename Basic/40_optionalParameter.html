@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optional Parameter</title>
+</head>
+<body>
+    <script>
+        //secara default parameter di dalam js optional
+        //jadi jika dalam function butuh parameter
+        //itu sifatnya boleh diisi, boleh engga (optional)
+        //jika tidak diisi parameter itu bernilai undefine
+        //dan tidak error
+
+        function sayHello(firstName,lastName) {
+            console.log(firstName);
+            console.log(lastName);
+        }
+        sayHello(); //tidak error
+        sayHello("samsul"); //tidak error
+        sayHello(null,"samsul"); //tidak error
+        sayHello("adek","samsul","bambang","heri"); //tidak error
+
+        //bahaya karena kalo ga teliti bisa salah krim parameter
+        //dan cukup sulit di traceing
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Logika di Non Boolean </title>
+</head>
+<body>
+    <script>
+        //---------Operator Or (||)
+        //operator or (||) > baca dari kiri dan kanan
+        //operator ini keduanya tidak harus true
+        //jika salah satu truthy maka diambil nilai truthynya
+        //jika falsy semua maka diambil yg paling kanan
+        //jika truthy semua diambil yg paling kiri
+
+        console.log("Hello" || ''); //Hello
+        console.log("" || []);      // []
+        console.log("0" || "NOL");  // 0
+        console.log(0 || "NOL");    // 0
+        console.log(null || "NULL");// NUlL
+        console.log(undefined || "Undefine"); //Undefine
+        console.log(undefined || null); //null
+
+        const person = {
+            firstName : "Adek",
+            lastName :"Kristiyanto"
+        }
+        let name = person.firstName || person.lastName;
+        console.log(name);
+
+        //---------Operator AND (&&)
+        //operator AND (&&) membaca dari kiri ke kanan
+        //operator ini keduanya / lebih harus true
+        //jika salah satu saja false diambil yg falsy
+        //jika semuanya truthy diambil nilai yang paling kanan
+        //jika semuanya falsy diambil nilai yang paling kiri
+
+        console.log("Hello" && ''); //''
+        console.log("" && []);      // ""
+        console.log("0" && "NOL");  // "NOL"
+        console.log(0 && "NOL");    // 0
+        console.log(null && "NULL");// null
+        console.log(undefined && "Undefine"); //Undefine
+        console.log(undefined && null); //undefine
+        console.log(undefined && false); //undefine
+    </script>
+</body>
+</html>

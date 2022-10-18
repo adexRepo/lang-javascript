@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolean</title>
+</head>
+<body>
+    <script>
+
+        //Teori - Boolean
+
+        /* 
+            Boolean merupan wrapper class untuk tipe primitif boolean
+            Boolean memiliki method toString() untuk mengkonversi ke String
+            Dan memiliki method valueOf() untuk mengkonversi ke tipe boolean priimitif
+            link lengkapnya :
+            https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+            let x = Boolean(expression);     // use this...
+            let x = !!(expression);          // ...or this
+            let x = new Boolean(expression); // don't use this!
+        */
+
+        const boolean = Boolean(true); //kata true itu boolean primitif
+        console.log(boolean);
+        console.log(typeof boolean);
+        console.log(boolean.toString()); //string
+        console.log(boolean.valueOf());
+    </script>
+</body>
+</html>

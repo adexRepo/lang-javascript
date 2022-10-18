@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduce Async</title>
+</head>
+<body>
+    <script>
+
+        // Teori
+        /* 
+            APA ITU Asynchronous ?
+            kita bahas dulu synchronous ya!
+            -Program dalam JavaScript secara default akan dieksekusi baris per baris
+            -Secara default, proses di JavaScript akan di eksekusi secara Synchronous,
+            artinya baris selanjutnya akan di eksekusi setelah baris sebelumnya selesai di kerjakan
+            -Program Synchronous juga biasa disebut Blocking, karena harus menunggu tiap proses selesai,
+            baru proses selanjutnya bisa di eksekusi
+            mudahnya gini : line ke 2,3,4 dst akan diblocking dulu sebelum line 1 selesai di execute 
+        
+            Penjelasan diagram Synchronous
+            -Pahami dulu apa itu thread yaa di google
+            atau bisa lihat di link ini :
+            https://developer.mozilla.org/en-US/docs/Glossary/Main_thread
+
+            Analogi :
+            simpelnya gini main thread itu kyk sebuah plot dalam film
+            di gambar ada get product, show product, show header maupun show foother kan ?
+            nah kita anggap get product itu adegan pertama, dan show footer adalah klimaks dalam film
+            tentu dong! dalam film tidak mungkin adegan pertama langsung loncat ke klimaks
+            dia harus melewati show product dan show header dulu..
+            jadi yaa, gampangnya kita cuman cetak 2 console.log  'Hello World' aja itu pakai proses synchronous ya!
+            pahamkan ? proses synchronous ?
+            ingat!! synchronous ini adalah default nya javascript!!!
+
+            pertanyaannya adalah bagaimana proses Asynchronous berkerja ?
+            APA ITU Asynchronous ? //eehh muncul lagi 
+            -Walaupun secara default proses di JavaScript dieksekusi secara Synchronous, namun kita bisa membuatnya
+            menjadi Asynchronous.
+            -Berbeda dengan proses Synchronous, pada Asynchronous, JavaScript tidak akan menunggu proses tersebut selesai
+            melainkan JavaScript akan melanjutkan baris selanutnya, tanpa harus menunggu proses Asynchronous selesai
+            -Proses Asynchronous ini juga biasa disebut Non-Blocking
+
+            Analogi :
+            simpelnya Asynchronous ini gabisa pakai analogi film seperti di atas
+            gampangnnya gini dah misalkan lo lagi jalan di sebuah garis A, terus ada temen lo di depan yang jaraknya 10 meter
+            dari posisi lo, kan lo bisa manggil dia kan ? , gitulah asynchronous, dan temenlo itu akan jalan setelah lo panggil
+            dengan kata lain dia ada di jalan yang berbeda misalkan dijalan B (disebrang)
+            tentu saja dia [mungkin] bisa sampe duluan di garis finish (akhir program),
+            tergantung bebannya dia (kompleksitas program / jaringan / server dls)
+            paham dong pasti ? 
+
+            Diagram execute nya ada di gambar dibawah ya:
+            pasti lebih mudah dipahami nya sekarang setelah anologi diatas hohoho
+            intinya asynchronous itu tidak berurutan tergantung diperintahnya seperti apa
+            saat suatu function itu di perintah asynchronus itu kalo dia udah selesai di execute nya
+            maka dia akan di dipanggil lagi proses manggil lagi ini nama nya callback
+            gampangnya lo jalan terus manggil temen, pas di akhir lo nyapa  dia /manggil dia lagi (eh udh nyampe lo!)
+            proses nyapa (lalu nanyain pengalamannya / hasil) ini disebut callback  /memanggil kembali
+
+            yuk kita bahas callback [chapter selanjutnya >>]
+        */
+
+    </script>
+
+    <img src="2_contohSynchronous.png" alt="" srcset="">
+    <img src="2_contohAsynchronous.png" alt="" srcset="">
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Transform</title>
+</head>
+<body>
+    <script>
+
+        //Teori ---- Array Transform
+        /* 
+            filter itu kan tadi milih, sedangkan transform itu
+            yaa transformasi wkwkwk hmm yaa manipulasi isi array
+            liat aja deh dicontoh bawah :
+        */
+
+        //map itu untuk memetakan array / obj yang ingin di manipulasi
+        //returnnya array baru array lama ga berubah
+        const names = ["adek", "Kristiyanto","Hibernate"]
+        const transformMap = names.map(value => value.toUpperCase());
+        console.log(names); //before
+        console.log(transformMap); //after di map ke uppercase
+        
+        //Reduce itu untuk menggabung kan array menjadi 1
+        // tapi tidak merubah array
+        // reduce dari kiri ke kanan, reduce right sebaliknya
+        
+        const transformReduce1 = names.reduce((result,value) => result +" "+ value);
+        const transformReduceRight2 = names.reduceRight((result,value) => result +" "+  value);
+        console.log(transformReduce1);
+        console.log(transformReduceRight2);        
+
+        const numbers = [1,2,3,4,5,6,7,8,9,10];
+        //kita pisahkan angkanya dgn tanda ||
+        const transformReduce3 = numbers.reduce((result,value) => result +"|"+ value);
+        //kita total
+        const transformReduceRight4 = numbers.reduceRight((result,value) => result + value);
+        
+        console.log(transformReduce3);
+        console.log(transformReduceRight4);
+    </script>
+
+    <img src="11_arrayTransform.png" alt="" srcset="">
+</body>
+</html>

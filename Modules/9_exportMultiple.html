@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Export Multiple</title>
+</head>
+<body>
+    <script type="module">
+
+        //Teori
+        /* 
+            ---Export Multiple
+            Sebelumnya kita selalu menggunakan kata kunci export di awal variable
+            atau function atau class yang kita pengen ekspose
+            Sebenarnya kita bisa menggunakan export sekaligus (kagak satu satu),
+            caranya cukup gunakan perintah :
+            export{namaVariabel,namaFunction,namaClass}
+
+            lihat contohnya di /scripts/9_multiple.mjs
+        */
+        import { company,Company,sum } from "./scripts/9_multiple.mjs";
+    
+        console.log(company);
+        console.log(sum(10,9));
+
+        const iniClass = new Company("adek")
+    </script>
+</body>
+</html>

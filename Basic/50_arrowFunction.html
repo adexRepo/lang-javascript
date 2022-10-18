@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+</head>
+<body>
+    <script>
+        //alternatif pembuatan function lebih sederhana
+        // => seperti panah
+        //kekurangan arrow function
+        //1. tidak memiliki fitur arguments object
+        //2. tidak bisa menggunakan function generator
+        //3. tidak bisa mengakses this (dibahas nanti)
+        //4. tidak bisa mengakses super(nanti dibahas di OOP)
+
+        //--original
+        const sayHello = (params) => {
+            const say = `Hello ${params}`;
+            console.log (say);
+        }
+        sayHello("adek")
+
+        //--arrow function tanpa block
+        //hanya untuk cuman 1 baris
+        const sayGoing =(params) => console.log(`Hello ${params}`);
+        sayGoing("adek2")
+
+        //--arrow function return value;
+        //original
+        const sum = (first , second) =>{
+            return first + second
+        }
+        console.log("original : "+sum(10,10))
+        
+        //--hack (tanpa kata kunci return) jika 1 baris
+        const jml = (first,second) => first + second;
+        console.log("hack : "+jml(10,10))
+
+        //--arrow function tanpa kurung parameter
+        //kalo kosong wajib, kalo satu tidak wajib
+        const tmbh = first => console.log(`Hello ${first}`);
+        tmbh("sampah");
+
+        //--arrow function di parameter
+        function giveMeName(callBack) {
+            callBack("adeks");
+        }
+
+        giveMeName(params =>console.log(`hello ${params}`));
+    </script>
+</body>
+</html>

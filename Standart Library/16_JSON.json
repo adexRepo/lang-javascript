@@ -1,0 +1,14 @@
+{
+    "firstName":"Adek",
+    "lastName":"Kristiyanto",
+    "umur":"20",
+    "address":{
+        "no":"85",
+        "country":"Indonesia",
+        "city":"Jakarta Tenggara"
+    },
+    "hobbies":[
+        "coding",
+        "Game",
+        "Mempersulit hidup orang"
+]}
