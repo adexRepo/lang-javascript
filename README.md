@@ -1,0 +1,2 @@
+# lang-javascript
+Ringkasan JavaScript
