@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cara Kerja Prototype Inheritance</title>
+</head>
+<body>
+    <script>
+
+            // Bagaimana caranya property di prototype di akses dari object instance
+            // ketika kita mengakses property di object instance, 
+            // pertama akan dicek apakah di obj tsb terdapat property tersebut atau tidak,
+            // jika tidak, maka akan di cek di __proto__ ( dalam instance) (prototype nya) nya
+            // if still not exsist, akan di cek lagi di __proto__ yang lebih tinggi sampai nanti
+            // ujungnya / checking terakhirnya adalah di Object Prototype nya
+
+            // pertama di cek di dupin, jika tidak
+            // dicek di proto nya dupin, jika tidak ada juga
+            // dicek di proto si Person / object
+            function Person(firstName, lastName) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.sayHello = (name)=>{
+                    console.info(`Hello ${name}, my name is ${this.firstName}`);
+                }
+            }
+
+            Person.prototype.sayGoodBye = ()=>{
+                console.info(`Good Bye`)
+            }
+
+            Person.prototype.run = ()=>{
+                console.info(`${this.firstName}, is running `);
+            }
+
+            const adek = new Person("Adek","Kristiyanto");
+            const dupin = new Person("Dupin","Hibernate");
+
+            console.log(adek);
+            console.log(dupin);
+
+            //aksesnya spt biasa
+            adek.sayGoodBye();
+            //si adek akan cek di dalam dirinya
+            // lalu di cek di proto si adek
+            // lalu si adek akan di cek di Person..
+            // why person ?, karena si adek lahir dari si Person
+            // tau darimana lu adek lahir dari person ?
+            // bacot lu cok
+            // liat ndiri baris ke 38.. lo punya kembaran si dupin
+            // ohh ia yaa..
+
+    </script>
+</body>
+</html>

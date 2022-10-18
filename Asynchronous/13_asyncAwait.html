@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Await</title>
+</head>
+<body>
+    <script>
+
+        //ASYNC dan Await
+        /* 
+            Async Await adalah fitur baru Java Script yang digunakan untuk mempermudah
+            proses pembuatan code promise 
+
+            Dengan menggunakan Async Await, kita bisa membuat kode Asychronous dengan
+            gaya Synchronous
+
+            Async digunakan untuk menandakan bahwa Function tersebut adalah Async,
+            dan mereturn Promise
+
+            Await digunakan untuk mendapatkan value hasil dari function yang
+            mereturn Promise. Await hanya bisa digunakan dalam Async Function
+        */
+
+        //Contoh sederhanannya
+        //      async function onSearch(keyword) {
+        //          const products = await searchProducts(keyword);
+
+        //          clearProducts();
+        //          displayProducts(products);
+        //      }
+
+        // async ini return nya ialah promise
+        // await digunakan untuk mengambil value dari async lainnya yang mereturn promise
+        // nah kalo contoh di atas searchProducts itu return nya adalah products
+
+            //-------- ini sesuai yg dibaahas sebelumnya
+            function getProductUrl(keyword) {
+            return `https://www.blibli.com/backend/search/products?searchTerm=${keyword}`;
+            //return `https://www.blibli.com/backend/search/salahproducts?searchTerm=${keyword}`;
+        }
+
+        function getProducts(keyword) {
+            //Code Promise here!
+            //kita pakai ajax dan promise
+            const promise = new Promise(function (resolve, reject){
+                //code Asynchronous here!!
+                const ajax = new XMLHttpRequest();
+                ajax.onload = function() {
+                    if (ajax.status === 200) {
+                        const data = JSON.parse(ajax.responseText);
+                        resolve(data);
+                    } else {
+                        reject(Error("Gagal Mengambil data product"));
+                    }
+                };
+
+                const url = getProductUrl(keyword);
+                ajax.open("GET", url); //url ke backend
+                ajax.send();
+                
+            });
+            return promise;
+        }
+
+        function clearProducts() {
+            const productUl = document.getElementById("products");
+            productUl.textContent = "";
+        }
+
+        function displayListProducts(data) {
+            data.data.products.forEach((product) => {
+                displayProduct(product)
+            }
+            );
+        }
+
+        function displayProduct(product) {
+            const productLi = document.createElement("li");
+            productLi.textContent = product.name;
+
+            const productUl = document.getElementById("products");
+            productUl.appendChild(productLi);
+        }
+
+        async function buttonClick() {
+            //kita bisa pakai keyword await
+            const value = await getProducts(document.getElementById("keyword").value);
+            console.log("samsul");
+            const products = value.data.products;
+            clearProducts();
+            products.forEach((product) => {
+                displayProduct(product);
+            })
+        }
+
+    </script>
+    <input type="text"  id="keyword">
+    <button type="button" onclick="buttonClick()">Search</button>
+    <ul id="products"></ul>
+</body>
+</html>

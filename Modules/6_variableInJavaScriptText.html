@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variabel di Text/JavaScript</title>
+    <script type="text/JavaScript" src="scripts/variable1.mjs"></script>
+    <!-- jika dibawah ini di comment (variabel2.mjs)
+    maka hasilnya variabel name adalah Adek
+    tapi jika tidak di comment maka variabel name di srcipt/variabel1.mjs
+    akan ditiban dengan isi nya di script/variabel2.mjs
+
+    hal ini karena :
+    1. nama variabelnya sama
+    2. type nya text/JavaScript
+-->
+    <script type="text/JavaScript" src="scripts/variable2.mjs"></script>
+
+
+</head>
+<body>
+    <script type="text/JavaScript">
+
+        // Teori
+        /* 
+            ---Variable di text/JavaScript
+            lihat src nya!!
+            salah satu hal yang bikin bingung pada variable di JavaScript adalah ketika kita membuat
+            variable di global scope, maka variabel tersebut bisa diubah nilainya oleh file JavaScript lain
+        */
+       
+       console.log(name); 
+       //string kosong 
+       </script>
+</body>
+</html>

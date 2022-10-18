@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Worker</title>
+</head>
+<body>
+    <script>
+
+        // WEB WORKER
+        /* 
+            JavaScript adalah Single Thread, artinya walaupun proses yang kita buat adalah Async,
+            tetapi tetap akan dijalankan dalam Thread yang sama.
+
+            Kemampuan satu Thread dalam mengelola beberapa pekerjaan, dinamakan Concurrent.
+            Kemampuan menjalankan beberapa Thread untuk mengelola satu atau lebih pekerjaan,
+            dinamakan Paralel
+
+            Dan untuk membuat proses secara Paralel, kita bisa menggunakan Web Worker
+        
+            Web Worker adalah kemampuan untuk menjalankan proses di Thread yag berbeda dibandingkan Main Thread
+            Keuntungan menggunakan Web Worker adalah, jika terdapat proses yang membutuhkan waktu lama,
+            Web kita tidak akan Freeze, karena proses tersebut bisa dijalankan di Threadyang berbeda
+            dari Main Thread (yang biasa digunakan oleh UI)
+
+            lengkapnya :
+            https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers       
+        */
+
+        //cara membuatnya
+        const worker = new Worker("webWorker.js");
+
+        function showLog(total) {
+            for (let i = 0; i < total; i++) {
+                console.log(i);                
+            }
+        }
+
+        function buttonClick() {
+            console.log("Start Log");
+            showLog(20000);
+            console.log("Finish Log");
+        }
+    </script>
+<button onclick="buttonClick()"> Search Product</button>
+<img src="15_webWorkerDiagram.png" alt="" srcset="">
+</body>
+</html>

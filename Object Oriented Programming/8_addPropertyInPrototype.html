@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menambahkan Property into Prototype</title>
+</head>
+<body>
+    <script>
+        //TEORI
+        // prototype itu mirip object, dimana kita bisa menambahkan property kedalamnya
+        // baik itu bentuknya value maupun method
+        //Saat kita menambahkan sebuah property ke Prototype, maka otomatis, semua object
+        // instance yang turunan dari prototype tersebut akan memiliki property tersebut.
+
+        function Person(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.sayHello = (name)=>{
+                console.info(`Hello ${name}, my name is ${this.firstName}`);
+            }
+        }
+
+        Person.prototype.sayGoodBye = ()=>{
+            console.info(`Good Bye`)
+        }
+
+        Person.prototype.run = ()=>{
+            console.info(`${this.firstName}, is running `);
+        }
+
+        const adek = new Person("Adek","Kristiyanto");
+        const dupin = new Person("Dupin","Hibernate");
+
+        console.log(adek);
+        console.log(dupin);
+
+    </script>
+</body>
+</html>

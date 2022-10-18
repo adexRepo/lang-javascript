@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype Inheritance</title>
+</head>
+<body>
+    <script>
+
+        // Sekarang kita tahu kalo prototype selalu memiliki parent / ortu
+        // artinya dia adalah turunan dari parent tertinggi / object prototype
+        // lantas, anjay
+        // bagaimana caranya, jika kita ingin melakukan inheritance ke Prototype lain ?
+        // maksudnya ke object lain
+        // hal ini bisa dilakuin, tapi agak sedikit tricky
+        // ^^trick apaan bang ?
+        // -- gatau dah wkwk
+        // tricky because, actually for JavaScript Modern,
+        // definitely not recomended for practic OOP useing Prototype
+        // karena ES6 sudah dikenalkan kata kunci class yang akan...
+        // dibahas di chapter selanjutnya..
+
+        //
+
+        function Employee(name) {
+            this.name = name;
+        } 
+
+        function Manager(name) {
+            this.name = name ; 
+        }
+
+         //Manager.prototype = Employee.prototype; // ini cara salah
+        Manager.prototype = Object.create(Employee.prototype); // cara yang benar inheritance
+        
+        Employee.prototype.sayHello = function (name){ //gabisa pake arrow function
+            console.info(`Hello ${name}, my name is Employee ${this.name}`);
+        }
+        
+        Manager.prototype.sayHello = function (name){ //gabisa pake arrow function
+            console.info(`Hello ${name}, my name is Manager ${this.name}`);
+        }
+        
+        const employee = new Employee('Dupin');
+        employee.sayHello('Adek'); //harusnya : hello adek my name is employee Dupin
+
+        const manager = new Manager("Samsul");
+        manager.sayHello('Adek'); //harusnya : hello adek my name is manager Samsul
+
+        console.info(employee);
+        console.info(manager);
+
+        //--------- look yang salah----------------
+        // look img 10_diagramPrototypeInheritanceSalah.png
+        // Eko = samsul
+        // Samsul = budi
+        //obj nya langsung yg terhubung
+
+        //--------- look yang Benar----------------
+        // look img 10_diagramPrototypeInheritanceBenar.png
+        // Eko = samsul
+        // Samsul = budi
+        // bukan obj nya tapi proto nya yg terhubung
+        
+        </script>
+
+        <img src="10_diagramPrototypeInheritanceSalah.png">
+        <img src="10_diagramPrototypeInheritanceBenar.png">
+</body>
+</html>

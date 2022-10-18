@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>in Operator</title>
+</head>
+<body>
+    <script>
+        // operator ini untuk melihat apakah ada properti XX
+        //atau tidak di sebuah object
+        //PERINGATAN! operator in hanya untuk mengecek apakah ada index / propertinya
+        // bukan ada atau tidak nilainya / valuenya
+        const person = {
+            firstName : "Adek",
+            lastName : "Kristiyanto"
+        }
+        if("firstNasme" in person){
+            alert(`hello ${person.firstName}`)
+        } else{
+            alert(`maaf property yang kamu maksud tidaka ada`);
+        }
+    </script>
+</body>
+</html>

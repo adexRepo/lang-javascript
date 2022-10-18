@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Instanceof</title>
+</head>
+<body>
+    <script>
+
+        //Kadang ada case kita pengen ngecek apakah sebuah object merupakan instance dari class tertentu atau bukan
+        // ingat object instance ? itu loh yang adek / dupin
+        // biasanya di deklarasiin gini >> const dupin = new Person();
+        // kadang kalo codingan banyak itu bingung apakah si dupin itu sebuah object dari class mana
+        // karena kebanyakan class
+        // so, gunakan operator instanceof ini agar tidak bingung!!!
+
+        //kita tidak bisa mnggunakan typeof, karena object dari class
+        // jika kita gunakan operator typeof maka hasilnya adalah object
+        // udah gitu doang , asalnya darimana kita gatau
+
+        //Operator instanceof akan menghasilkan boolean, true jika benar object tsb adalah
+        // instance objectnya ,atau false jika bukan..
+
+        //misalkan pernyataan gini 
+        //DUPIN!! kamu objectnya karyawan yaa? enggak bukan >> false
+        //hmmmm lalu kamu objectnya manager ? iya bener >> true
+        //jadi harus ada tebakannya
+
+        //----- operator instanceof
+        class Employee{
+
+        }
+        class Manager{
+
+        }
+
+        const adek = new Employee();
+        const dupin = new Manager();
+
+        console.log(adek instanceof Employee);
+        console.log(adek instanceof Manager);
+        console.log(dupin instanceof Employee);
+        console.log(dupin instanceof Manager);
+        
+        console.log("--------------------------");
+        //------operator instanceof di class inheritance
+        
+        //operator ini mendukung class inheritance / kelas dari pewarisan
+
+        class Shape{
+
+        }
+
+        class Circle extends Shape{
+
+        }
+
+        const paintA = new Shape();
+        const paintB = new Circle();
+
+        console.log(paintA instanceof Shape); //true
+        console.log(paintA instanceof Circle); //false
+
+        //true karena paintB adalah turunan dari Circle
+        console.log(paintB instanceof Shape); //true 
+        //karena paintB dari Circle dan Circle dari Shape
+        console.log(paintB instanceof Circle);//true
+        console.log("--------------------------");
+
+    </script>
+</body>
+</html>

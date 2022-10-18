@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+</head>
+<body>
+    <script>
+
+        //fitur yang bisa digunakan untuk membongkar value value array / object
+
+        //-------------array
+        //contoh manual
+        {let names = ["Adek", "Kristiyanto", "Saripudin",23,"riana","lestari"];
+
+         let firstName = names[0];
+         let MidleName = names[1];
+         let lastName = names[2];
+         console.log(firstName);
+         console.log(MidleName);
+         console.log(lastName);
+
+        console.log("--------destructuring on array-------");
+        //contoh destructuring
+        const[namaDepan, namaTengah, namaAkhir, ...lainnya]=names;
+        console.log(namaDepan);
+        console.log(namaTengah);
+        console.log(namaAkhir);
+        console.log(lainnya);}
+        
+        {console.log("--------destructuring on object-------");
+        //-------------Object
+        
+        const  person ={
+            firstName : "Adek",
+            lastName :"Kristiyanto",
+            address:{
+                    street:"Jalanin dulu",
+                    city : "Jakarta",
+                    country : "Indonesia"
+                },
+                hobby :"Game",
+            channel :"mr.javaScript"
+        };
+
+        let {firstName,lastName,address, ...others}=person;
+        console.log(firstName);
+        console.log(lastName);
+        console.log(address);
+        console.log(others);
+        
+        //bisa gini : let {firstName,lastName,address:{street,city,country}, ...others}=person;
+        //tapi setelah ini addresnya tidak bisa di akses lagi
+        //ya ng bisa di akses adalah street, city dan country nya 
+    }
+
+    </script>
+</body>
+</html>

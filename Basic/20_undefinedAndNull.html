@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undifined And Null</title>
+</head>
+<body>
+    <script>
+        //undefined ialah tipe data yang belum di definisikan
+        //null ialah tipe data yang ada tapi kosong
+        
+        //---------------------UNDEFINE-------------------
+        //Dalam Variabel biasa
+        let name;
+        //name = "Jono";
+        if(name === undefined){
+            console.info("Undefined");
+        }else{
+            console.info("Defined : " + name);
+        }
+
+        // Dalam Larik
+        const Larik = ["adek","Kristiyanto"];
+        if(Larik[2] == undefined){
+            console.info("Array Undefined");
+        }else{
+            console.info("Array Defined : "+Larik[1]);
+        }
+
+        //Dalam Object
+        const object = {name:"samsul"};
+        if(object.name == undefined){
+            console.info("Object Undefined");
+        }else{
+            console.info("Object Defined : "+object.name);
+        }
+        
+        //---------------------NULL-----------------
+        const nama = null
+        let lakon = undefined
+        if(nama === lakon){
+            alert("Keduanya : NULL");
+        }else{
+            alert(`
+            variabel nama : ${nama}
+            variabel lakon : ${lakon}
+            `);
+        }
+        </script>
+</body>
+</html>

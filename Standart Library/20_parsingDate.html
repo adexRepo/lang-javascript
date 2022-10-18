@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parsing Date</title>
+</head>
+<body>
+    <script>
+
+        //Teori
+
+        /* 
+            Membuat date dari string
+            kita bisa melakukan parsing membuat date dari string menggunakan
+            method Date.parse(value).
+            Format string harus YYYY-MM-DDTHH:mm:ss.sssZ (z = timezone)
+            Dimana jika kita pengen bikin date isinya tanggal biasa,
+            bisa pakai YYYY-MM-DD,
+            jikalau date dgn tanggal dan waktu maka YYYY-MM-DDTHH:mm:ss.sss
+            jika date lengkap YYYY-MM-DDTHH:mm:ss.sssZ
+            Hasil pasing adalah unix timestamp (number) bukan object date
+            //gambar penjelasan YYYMD dls
+        */
+
+        const parseTimestamp = Date.parse("2020-12-18T10:10:10.123+07:00");
+        console.log(parseTimestamp);
+
+        const parseDate = new Date(parseTimestamp);
+        console.log(parseDate);
+    </script>
+    <img src="20_parsingDate.png" alt="" srcset="">
+</body>
+</html>

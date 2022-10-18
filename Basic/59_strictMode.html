@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strict Mode</title>
+</head>
+<body>
+    <script>
+
+        //default saat menjalankan program mode tidak strict /sloppyMode
+        //jika diaktifkan maka :
+        // 1. merubah beberapa js error dari yang tadinya silent error, menjadi throw error (terlihat)
+        // 2. memperbaiki beberapa kesalahan engine js untuk optimasi
+        // 3. menolak beberapa kode perintah yang kedepannya akan digunakan di ECMAScript
+        //    beberapa printah yang tidak boleh digunakan var, with, delete, eval or argument 
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode/Transitioning_to_strict_mode
+
+        //cara menyalakan strict mode, kita bisa menambahkan `use strict` pada baris awal file js
+        //atau bisa ditambahkan di awal function
+
+        //contoh //inih error
+        {function useStrictMode(params) {
+            'use strict';
+            const person = {
+                firstName :"Adek"
+            }
+            with (person){
+                console.info(firstName)
+            }
+        }
+        useStrictMode();}
+
+    </script>
+</body>
+</html>

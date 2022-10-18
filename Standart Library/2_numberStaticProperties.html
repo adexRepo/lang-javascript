@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Static Properties</title>
+</head>
+<body>
+    <script>
+
+        //Teori
+        /* 
+            -Review : Static itu artinya bisa diakses tanpa
+            harus membuat object Numbernya
+            -Number memiliki banyak static properties, seperti :
+            1. Number.MIN_VALUE untuk mendapatkan number minimal
+            2. Number.MAX_VALUE untuk mendapatkan number maksimal
+            -sebenernya ada banyak bukan cuman 2 itu aja bisa di akses di bawah sini :
+            https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number#static_properties
+            -atau bisa click di link gambar dibawah
+        */
+        
+        //--Sebelumnya
+        const input = "12345";
+        const number = Number(input);
+
+        console.log(typeof input);
+        console.log(typeof number);
+        console.log(number);
+
+        console.log(Number("Samsul"));
+
+        //-- STATIC PROPERTIES :
+        console.log(Number.MIN_VALUE);
+        console.log(Number.MAX_VALUE);
+        console.log(Number.MIN_SAFE_INTEGER);
+        console.log(Number.MAX_SAFE_INTEGER);
+
+    </script>
+
+    <img src="2_numberStaticProperties.png">
+</body>
+</html>

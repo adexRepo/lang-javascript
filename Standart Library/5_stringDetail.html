@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Detail</title>
+</head>
+<body>
+    <script>
+
+        //Teori
+        /* 
+            Tipe data String sudah kita bahas pada materi JavaScript Dasar
+            Namun kita belum membahas instance method atau juga
+            instance properties yang terdapat di String
+            link lengkapnya :
+            https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+            
+            ##---String Instance Method dan Properties---
+            String sendiri memiliki banyak sekali instance method dan properties
+            Hal ini menjadikan untuk memanipulasi data String sangat mudah di JavaScript,
+            seperti mengubah menjadi lowercase, UPPERCASE, memotong string menjadi array dll
+            https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#instance_methods
+        */
+
+        const name = "Adek Kristiyanto";
+
+        console.log(name.length);
+        console.log(name.toLowerCase());
+        console.log(name.toUpperCase());
+        console.log(name.split(" "));
+        //data original tidak berubah
+        const input = "            input data      ";
+        console.log(input.trim()); //menghapus sepasi
+        console.log(input);
+
+        //note : return nya data baru
+    </script>
+</body>
+</html>

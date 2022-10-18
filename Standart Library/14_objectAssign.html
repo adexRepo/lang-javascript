@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Assign</title>
+</head>
+<body>
+    <script>
+
+        //Teori
+        /* 
+            Kadang kita ada kasus menggabungkan semua attribute dari sebuah object ke object lain
+            Hal ini bisa kita lakukan dengan menggunakan Object.assign(target,source)
+         */
+
+        const target = {
+            firstName : "Adek"
+        }
+
+        const source ={
+            firstName :"Samsull", //bisa di comment untuk cek
+            lastName :"Kristiyanto"
+        }
+
+        Object.assign(target,source);
+        console.log(target);
+        console.log(source);
+
+        //jadi kalo semisal ada yang sama maka akan di tiban
+
+    </script>
+</body>
+</html>

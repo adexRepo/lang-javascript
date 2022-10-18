@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope</title>
+</head>
+<body>
+    <script>
+        //scope adalah area akses sebuah data
+        //ada 2 jenis scope
+        //global scope dan local scope
+        //commentar ini dibuat di global scope
+        //sedangkan local scope adalah di dalam suatu function
+        //atau apalah..
+
+        //global scope contoh :
+        let jamban; // variabel couneter ini ada di global scope
+        //local scope contoh :
+        function hitMe(params) {
+            //local scope nya hitMe
+            let samsul = 0;
+        }
+
+        function other(params) {
+            //other bisa akses variabel bernama jamban
+            //but other tidak bisa akses ke variabel bernama samsul
+            //why ? karena samsul ada di local scope hitMe
+            //sedangkan jamban berada di global scope
+        }
+        // btw dua function diatas (hitMe dan other) ada di global scope
+        //segala yang ada di global scope bisa di akses di local scope
+        //sedangkan sebuah variabel yg dideklarasikan di local scope
+        //tidak bisa di akses di local scope lainnya
+        //kecuali ... cek dibawah
+
+        //misalkan gini : (nested function)
+        function jancoeg(params) {
+            let iniVar;
+            //jancoeg bisa akses semua var yang ada di global scope
+            //tidak bisa akses variabel yang ada di local scope nya koskosan
+            function koskosan(params) {
+                //koskosan bisa akses ke semua variabel yang ada di :
+                // global scope dan local scope nya jancoeg
+                //why ? karena function koskosan ada di didalam
+                //function jancoeg.. paham ?
+            }
+        }
+    </script>
+</body>
+</html>

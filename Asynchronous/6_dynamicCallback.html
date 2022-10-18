@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Callback</title>
+</head>
+<body>
+    <script>
+
+        //Dynamic Callback
+        /* 
+            Kadang dalam membuat program JavaScript, kita ingin membuat callback yang dinamis,
+            Bisa berubah-ubah sesuai kebutuhan kita
+            Untuk membuat Dynamic Callback, kita bisa memanfaatkan function as argument di JavaScript
+            dimana callback function nya kita masukkan dalam argument, sehingga bisa diubah sesuai
+            dengan keinginan kita
+
+            di contoh chapter sebelumnya itu static langsung ke bentuk list, nah disini ingin diubah
+        */
+        function getProductUrl(keyword) {
+            return `https://www.blibli.com/backend/search/products?searchTerm=${keyword}`;
+            //return `https://www.blibli.com/backend/search/salahproducts?searchTerm=${keyword}`;
+        }
+
+        function getProducts(keyword,callbackSucceed,callbackFail) {
+            //code AJAX HERE!
+            const ajax = new XMLHttpRequest();
+            ajax.onload = function() {
+                if (ajax.status === 200) {
+                    //code AJAX CALLBACK ERROR
+                    const data = JSON.parse(ajax.responseText);
+                    callbackSucceed(data);
+                } else {
+                    callbackFail();
+                }
+            };
+
+            const url = getProductUrl(keyword);
+            ajax.open("GET", url); //url ke backend
+            ajax.send();
+        }
+
+        function getProductsError() {
+            console.log("ERROR when Get Product");
+            alert("ERROR When Get Product");
+        }
+
+        function clearProducts() {
+            const productUl = document.getElementById("products");
+            productUl.textContent = "";
+        }
+
+        function displayListProducts(data) {
+            data.data.products.forEach((product) => {
+                displayProduct(product)
+            }
+            );
+        }
+
+        function clearTableProduct() {
+            const productUl = document.getElementById("table-products");
+            productUl.textContent = "";
+        }
+
+        function displayTableProducts(data) {   
+            const table = document.createElement("table");
+            table.setAttribute("border", 1);
+
+            let index = 0;
+            data.data.products.forEach(product => {
+                table.insertRow(index).insertCell(0).innerText = product.name;
+                index++;
+            });
+
+            const tableProduct = document.getElementById("table-products");
+            tableProduct.appendChild(table);
+        }
+
+        function displayProduct(product) {
+            const productLi = document.createElement("li");
+            productLi.textContent = product.name;
+
+            const productUl = document.getElementById("products");
+            productUl.appendChild(productLi);
+        }
+
+        function buttonClick() {
+            getProducts(document.getElementById("keyword").value,function (data) {
+                clearProducts();
+                displayListProducts(data);
+            },function (error) {
+                getProductsError();
+            });
+
+            getProducts(document.getElementById("keyword").value,function (data) {
+                clearTableProduct();
+                displayTableProducts(data);
+            },function (error) {
+                getProductsError();
+            });
+            console.log("succes click button dulu yaa"); //karena ajax ini di akses lebih dulu dibandingkan yg atas (line 65)
+        }
+
+    </script>
+    <img src="4_caraKerjaAjax.png" alt="" srcset="">
+
+    <input type="text"  id="keyword">
+    <button type="button" onclick="buttonClick()">Search</button>
+    <ul id="products"></ul>
+    <div id="table-products"></div>
+    </script>
+</body>
+</html>

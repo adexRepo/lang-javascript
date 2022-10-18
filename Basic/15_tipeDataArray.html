@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <script>
+        //array di js dinamis lenght nya
+        //bisa lebih dari 1 tipe data dalam 1 aray
+        // let nama_array = []; indeks = 0,1,2 ..
+        //lenght array itu dimulai dari 1
+
+        let arrayKosong =[];
+        let arrayNama = ["Luffy","Zoro","Samsul", 1 , 1.3,true];
+        //tampilkan berdasarkan indeks
+        document.writeln(`<p>${arrayNama[0]}</p>`)
+        document.writeln(`<p>${arrayNama[1]}</p>`)
+        document.writeln(`<p>${arrayNama[2]}</p>`)
+        document.writeln(`<p>${arrayNama[3]}</p>`)
+        document.writeln(`<p>${arrayNama[4]}</p>`)
+        document.writeln(`<p>${arrayNama[5]}</p>`)
+        console.table(arrayNama);
+
+        //--------------------------------------
+        //mengisi data di array
+        const names = [];
+        names.push("Sanji");
+        names.push("Chopper","Nami");
+
+        console.table(names);
+        
+        
+        //memasukkan array kedalam array
+        
+        arrayNama.push(["adek","Kristiyanto","True"])
+        console.table(arrayNama);
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Argument Object </title>
+</head>
+<body>
+    <script>
+        //sebelum ada rest parameter dipembahasan sebelumnya 42
+        // ada fitur Argument Object yaitu bisangammbil semua
+        //parameter dalam bentuk array dgn menggunakan object
+        //bernama argument yg otomatis bisa dipake di function
+        //tapi ga bisa ditentukan paramnya
+        //tapi itu jadul, saat ini rekomendasinya adalah rest parameter
+        //cekidot
+
+        function oldSum() {
+            let total = 0;
+            for (const Kantong of arguments) {
+                total += Kantong
+            }
+            document.writeln(`<p>Total is ${total}</p>`);
+        }
+        oldSum(1,2,3,4,5);
+    </script>
+</body>
+</html>

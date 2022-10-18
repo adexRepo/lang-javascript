@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Queue</title>
+</head>
+<body>
+    <script>
+
+        //-----Array Queue---- 
+            /* 
+                -Dalam struktur data, terdapat tipe struktur data bernama Queue(Antrian)
+                -Dimana data masuk akan diposisikan di urutan paling belakang
+                -sedangkan data keluar akan diposisikan dari urutan paling depan
+                -Mirip sekali dengan antrian, atau istilahnya FIFO (first In first Out)
+                -Kita bisa menggunakan Array dengan bantuan function push()
+                untuk menambah data ke paling belakang.
+                -dan shift() untuk mengambil dan menghapus data paling depan
+            */
+            console.log("--------Array Queue--------");
+            const queue =[];
+            queue.push("Adek"); //pertama dimasukkan
+            queue.push("Krist"); //kedua
+            queue.push("Bayu");  //ketiga
+            queue.push("Samsul");//keempat
+
+            //shift :data diambil dan dihapus dari array
+            console.log(queue.shift()); //adek
+            console.log(queue.shift()); //krist
+            console.log(queue.shift()); //bayu
+            console.log(queue.shift()); //samsul
+            console.log(queue.shift()); //undifine
+
+            console.table("ini isi queue : "+queue);
+
+    </script>
+</body>
+</html>

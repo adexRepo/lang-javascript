@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optional Chaining</title>
+</head>
+<body>
+    <Script>
+        //optional chaining op ialah operator yang digunakan untuk emngamankan
+        //ketika kita mengakses property dari sebuah object dari data nullish
+        //nullis = null dan undefine
+        // jika tidak maka akan error cuk (liat di console)
+
+        let person = {
+/*             alamat : {
+                kota : "Jakarta"
+            } */
+        };
+        let kota;
+        //menggunakan if
+        if (person.kota!==undefined && person.kota !== null){
+            kota = person.alamat.kota;
+        }
+        document.writeln(kota)
+        
+        document.writeln(`</br>`)
+        
+        //menggunakan Optional Chaining
+        kota =person?.alamat?.kota;
+        document.writeln(kota)
+
+    </Script>
+</body>
+</html>

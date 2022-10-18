@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Constructor</title>
+</head>
+<body>
+    <script>
+
+        //Class Inheritance sifatnya seperti Property Inheritance
+        //Bagaimana dengan Constructor Inheritance ? Sebenarnya
+        // Constructor Inheritance hanyalah melakukan eksekusi constructor lain
+        // dengan tujuan agar property di constructor lain bisa ditambahkan ke instance object ini
+        //Dalam case ini, jika kita ingin mencapai hasil yang sama, kita bisa menggunakan
+        // kata kunci super di dalam constructor
+        //Kata kunci super digunakan untuk emmanggil constructor super class
+        //Jika di child class kita membuat constructor, maka kita wajib
+        // memanggil parent constructor, walaupun di parent tidak ada constructor
+
+        class Employee {
+            constructor(firstName){
+                this.firstName = firstName;
+            }
+
+            sayHello(firstName){
+                console.log(`Helo ${firstName}, my name is employee ${this.firstName}`);
+            }
+        }
+
+        class Manager extends Employee { //jadi apa yg dimiliki Employee, manager punya
+            constructor(firstName, lastName){
+                super(firstName);
+                //jika manager sudah dideklarasikan extends dari Employee maka 
+                // wajib manggil parameter constructor dari Employee
+                this.lastName = lastName;
+            }
+            
+            sayHello(name){
+                console.log(`Helo ${name}, my name is employee ${this.firstName} ${this.lastName}`);
+            }
+        }
+
+        const adek = new Employee("Hafiz");
+        adek.sayHello ("Krist")
+        
+        const dupin = new Manager("Kian","Saripudin");
+        dupin.sayHello ("Hibernate")
+
+        console.log(adek);
+        console.log(dupin);
+
+    </script>
+</body>
+</html>

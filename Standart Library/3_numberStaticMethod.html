@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Static Method</title>
+</head>
+<body>
+    <script>
+
+        //Teori
+        /* 
+            -Number memiliki banyak static method, seperti :
+            1. Number.isNaN(value) untuk mengecek apakah value NaN atau bukan
+            2. Number.isInteger(value) untuk mengecek apakah value berupa Integer atau bukan
+            -sebenernya ada banyak bukan cuman 2 itu aja bisa di akses di bawah sini :
+            https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number#static_methods
+            -atau bisa click di link gambar dibawah
+        */
+
+        const data1 = Number("12345");
+        const data2 = Number("Dupin");
+        console.log(Number.isInteger(data1)); //true
+        console.log(Number.isNaN(data1));     // false
+        console.log(Number.isInteger(data2)); // false
+        console.log(Number.isNaN(data2));     //true
+
+        console.log("-----------");
+        //lainnya :
+        console.log(Number.isFinite(data1));  //true
+        console.log(Number.isSafeInteger(data1)); //true
+    </script>
+
+<img src="3_numberStaticMethod.png" alt="" srcset="">
+</body>
+</html>

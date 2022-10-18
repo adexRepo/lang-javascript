@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Handling Try Catch</title>
+</head>
+<body>
+    <script>
+
+        //Saat terjadi error di kode program js, kadang kita
+        // kita tidak ingin program kita berhenti.
+        //Kita bisa menggunakan try catch error,
+        // jadi pas sebelumnya di lempar ke muka kita, errornya
+        //nah disini ditangkap biar kita gabisa liat error dulu
+        //sebelum program di eksekusi semuanya.
+        //Pada block try kita akn mencoba mengkases kode program
+        // yang bisa menyebabkan error, dan jika terjadi error, block try
+        // akan berhenti dan otomatis masuk ke block catch
+        // jika tidak terjadi error. block catch tidak akan di eksekusi
+
+        // contoh
+
+        class MathUtil{
+            static sum (...numbers){
+
+                if(numbers.length === 0){
+                    throw new Error("Total parameter harus lebih dari 0");
+                }
+
+                let total = 0
+                for (const number of numbers){
+                    total += number;
+                }
+                return total;
+            }
+        }
+
+        try {
+            console.log(MathUtil.sum());
+            console.log("Adek");//ga di eksekusi karena atasnya error
+        } catch (error) {//tidak akan di eksekusi jika tidak error
+            console.log(`Terjadi Error : ${error.message}`);
+        }
+        
+        console.log("Samsul"); //di eksekusi karena error di dalam try sudah ditangkap catch
+        //error.message adalah property bawaan dari class error
+
+    </script>
+</body>
+</html>

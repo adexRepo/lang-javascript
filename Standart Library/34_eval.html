@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eval</title>
+</head>
+<body>
+    <script>
+
+        //Teori --- Eval
+        /* 
+            Eval merupakan function yang digunakan untuk mengeksekusi kode JavaScript dari String
+            Fitur ini sangat menarik, namun perlu hati-hati ketika menggunakannya
+            Jikalau sampai salah penggunaan, maka bisa jadi kita malah mengeksekusi
+            kode program yang bisa menyebabkan masalah keamanan di website kita
+            bahkan di link dibawah ini memberikan peringatan
+            lengkapnya di :
+            https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval
+        */
+        console.log(eval('2 + 2'));
+        // expected output: 4
+
+        console.log(eval(new String('2 + 2')));
+        // expected output: 2 + 2
+
+        console.log(eval('2 + 2') === eval('4'));
+        // expected output: true
+
+        console.log(eval('2 + 2') === eval(new String('2 + 2')));
+        // expected output: false
+
+        //---------------------
+        const script = `alert("anda di heck!!")`
+
+        eval(script);
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nullish Coalescing Operator</title>
+</head>
+<body>
+    <script>
+        //Nullist value adalah null dan undefine
+        let parameter;
+        let data = parameter;
+        //-------------tanpa nullist operator
+        if(data === null || data === undefined){
+            data ="Nilai Default";
+            document.writeln(`<p>${data}</p>`)
+        }else{
+            document.writeln(`<p>${data}</p>`)
+        }
+        
+
+        //-------------Dengan nullist operator
+        let data2 = parameter ?? "sampah Lo";
+        document.writeln(`<p>${data2}</p>`)
+        
+    </script>
+</body>
+</html>

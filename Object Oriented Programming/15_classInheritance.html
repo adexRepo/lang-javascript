@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Inheritance</title>
+</head>
+<body>
+    <script>
+
+        //sebelumnya kita sudah tahu bahwa prototype mendukung pewarisan.
+        // walaupun agak sedikit tricky cara pembuatannya (di constructor function)
+        // inget ga yg Object.create(Employee dst)
+        // untungnya itu diperbaiki di ES6 dengan fitur classnya
+        // sebuah class bisa melakukan pewarisan dari class lainnya
+        // dengan menggunakan kata kunci ectends
+        // dijavascript, class inheritance sama seperti prototype inheritance,
+        // hanya bisa memiliki satu parent class.
+
+        class Employee {
+            sayWoy(name){
+                console.log(`Helo ${name}, my name is employee ${this.name}`);
+            }
+        }
+
+        class Manager extends Employee { // ini artinya si orangtua adalah Employee
+/*              sayWoy (name){
+                console.log(`Helo ${name}, my name is manager ${this.name}`);
+            }  */
+        }
+
+        const adek = new Employee();
+        adek.name = "adek";
+        adek.sayWoy ("Krist")
+        
+        const dupin = new Manager();
+        dupin.name = "Dupin";
+        dupin.sayWoy ("Hibernate")
+
+        console.log(adek);
+        console.log(dupin);
+
+
+    </script>
+</body>
+</html>

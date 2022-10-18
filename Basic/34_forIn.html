@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For In</title>
+</head>
+<body>
+    <script>
+        // for in digunakan untuk melihat properti apa saja di sebuah objek / array
+        
+        const person ={
+            firstName :"Adek",
+            lastName :"Kristiyanto",
+            umur : 23,
+            uang :"NULL"
+        };
+        for (const property in person) {
+            console.log(property+ " >> "+person[property]);
+        }//melihat dan value dari property itu
+        const names = ["adek", "Kristiyanto","23"]
+        for (const index in names) {
+            console.log(index+ " >> "+names[index]);
+        }//melihat dan value dari indeks itu
+        
+    </script>
+</body>
+</html>

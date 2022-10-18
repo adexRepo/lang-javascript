@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parameter in Constructor Function</title>
+</head>
+<body>
+    <script>
+            //old OOP before ES6
+            // karena dalam js, class ialah berbentuk function(versi lama),
+            // jadi secara default, function tsb ada parameternya
+            // custructor sama seperti function biasanya, bisa memiliki parameter,
+            // hall ini membuat kita dapat membuat object,
+            // kita bisa mengirim langsung data lewat parameter di custructor func tsb.
+            
+        function Person(firstName,lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.sayHello = (params) =>{
+                console.info(`hello ${params}, my name is ${this.firstName}`);
+            }
+        }
+
+        const dupin = new Person("Adek","Kristiyanto");
+        dupin.sayHello();//hello undefined, my name is adek
+        const krist = new Person("Dupin","Sasaki");
+        krist.sayHello("Sasakie");// hello Sasakie, my name is Dupin
+
+
+        console.log(dupin);
+        console.log(krist);
+    </script>
+</body>
+</html>

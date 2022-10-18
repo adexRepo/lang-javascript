@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator di Array</title>
+</head>
+<body>
+    <script>
+        //ini hanyalah operator yang paling sering digunakan
+        //aslinya banyak
+        let names =["adek","kristiyanto","programmer", 2021];
+        //[A] operasi menambah data ke array
+        names.push("hidup");
+        console.table(names);
+        //[B] operasi mendapatkan panjang array
+        console.log("panjang array : " +names.length);
+        //[C] operasi mendapatkan data di posisi index
+        console.log("dapet data index ke 3 : " +names[3]);
+        //[D] operasi mengubah data di posisi index
+        names[1]="sebagai";
+        console.table(names);
+        //[E] operasi menghapus data di posisi index, tapi tidak menggeser
+        delete names[1];
+        console.table(names);
+        //[]ada lanjutannya
+    </script>
+</body>
+</html>

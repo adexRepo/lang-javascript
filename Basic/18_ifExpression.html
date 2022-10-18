@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IF Ekspression</title>
+</head>
+<body>
+    <script>
+        const examValue = 60;
+
+        if(examValue > 80){ //jika examValue lebih dari 80
+            document.writeln(`<p> Good Job</p>`);
+        } else { //jika tidak true kondisi diatas maka
+            document.writeln(`<p>Silahkan belajar lagi</p>`);            
+        }
+        
+        let health = 30;
+        if(health > 90){
+            document.writeln(`<p>Selamat Anda Sukses</p>`);
+        } else if(health > 70){
+            document.writeln(`<p>Ayooo dikit lagi KKM</p>`);
+            
+        }else if(health > 50){
+            document.writeln(`<p>Wah ko gitu</p>`);
+            
+        }else if(health > 30){
+            document.writeln(`<p> Anda tidak berbakat</p>`);
+            
+        }else{
+            document.writeln(`<p> pindah jurusan aja</p>`);
+        }
+    </script>
+</body>
+</html>

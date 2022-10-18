@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+</head>
+<body>
+        <SCript>
+            // FETCH API
+
+            /* 
+                Fetch API adalah API baru untuk melakukan AJAX
+                Tidak seperti sAJX yang menggunakan Callback, Fetch API menggunakan Promise
+                sehingga kita bisa mudah menggunakan Fetch API dibandingkan AJAX
+
+                lengkapnya di : 
+                https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+            */
+
+            // Cara menggunakan : 
+
+            // fetch(url,config)
+            //     .then(function(response){
+            //         //do something with response
+            //     })
+            //     .catch(function(error){
+            //         //do something with error
+            //     })
+            // config ini untuk HTTP headernya apa dls
+            //ini return defaultnya promise
+
+            //-------- ini sesuai yg dibaahas sebelumnya
+        function getProductUrl(keyword) {
+            return `https://www.blibli.com/backend/search/products?searchTerm=${keyword}`;
+            //return `https://www.blibli.com/backend/search/salahproducts?searchTerm=${keyword}`;
+        }
+
+        function getProducts(keyword) {
+            const url = getProductUrl(keyword);
+            return fetch(url,{
+                method: 'GET',
+            }).then(function(response){
+                return response.json();
+            })
+        }
+
+        function clearProducts() {
+            const productUl = document.getElementById("products");
+            productUl.textContent = "";
+        }
+
+        function displayListProducts(data) {
+            data.data.products.forEach((product) => {
+                displayProduct(product)
+            }
+            );
+        }
+
+        function displayProduct(product) {
+            const productLi = document.createElement("li");
+            productLi.textContent = product.name;
+
+            const productUl = document.getElementById("products");
+            productUl.appendChild(productLi);
+        }
+
+        function buttonClick() {
+            const promise = getProducts(document.getElementById("keyword").value);
+            promise
+                .then (function(value){
+                    //diakses pertama kali
+                    return value.data.products; //dapetin product nya
+                })
+                .then (function(products){
+                    //diakses ketika yang pertama selesai
+                    clearProducts();
+                    products.forEach((product) => {
+                    displayProduct(product)
+                    })
+                }) //jika ingin ditambahkan chain methodnya maka harus di return
+                .catch(function(error){
+                    //hanya akan di akses jika error
+                    alert(error.message);
+                })
+                .finally(function(){
+                    //akan selalu di akses baik error atau tidak
+                    console.log("Selesai memproses Promise");
+                })
+        }
+
+    </script>
+    <input type="text"  id="keyword">
+    <button type="button" onclick="buttonClick()">Search</button>
+    <ul id="products"></ul>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipe Data Object</title>
+</head>
+<body>
+    <script>
+        //cara pertama deklarasi object
+        const orang ={}; //object kosong
+        //ubah property atau attribute
+        orang["nama"] = "Adek Kristiyanto";
+        orang["Alamat"] = "Jakarta";
+        orang["Umur"] = "23 tahun";
+        
+        console.table(orang);
+        
+        delete orang["Umur"]; //case sensitif
+        console.table(orang);
+        
+        //cara Kedua deklarasi object
+        const person = {
+            nama : "Adek Kristiyanto",
+            alamat : "Indonesia",
+            cita :"CEO"
+        }
+        console.table(person);
+        //cara akses property/attribute
+        console.info(`Nama : ${orang.nama}`);
+        console.info(`Alamat : ${orang.Alamat}`);
+        console.info(`Umur : ${orang.Umur}`);
+    </script>
+</body>
+</html>

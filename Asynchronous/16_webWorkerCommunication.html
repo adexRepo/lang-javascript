@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Worker communication</title>
+</head>
+<body>
+    <script>
+
+        //Web Worker communication
+
+        /* 
+            WEB WORKER COMMUNICATION
+            Web Worker proses nya Async, dan untuk berkomunikasi dengan Web Worker, kita akan menggunakan Event Listener
+            Untuk mengirim data ke Web Worker atau ke Main Thread, kita bisa menggunakan method postMessage
+        */
+/* {
+        //Cara Pengunaanya : 
+
+        // ini di main_thread(1)
+        const worker = new Worker("webWorker.js")
+        //listener itu ada di main_thread get data dari worker ke main thread
+        worker.addEventListener("message", function(event){
+            const data = event.data;
+        })
+        
+        //postMessage function itu ngirim param ke workernya
+        worker.postMessage(message);
+        
+        // ini di webWorker.js nya(2)
+        addEventListener("message", function(event){
+            const data = event.data;
+
+            postMessage(message);
+        })
+    }
+ */
+
+//====================================================
+//cara membuatnya
+const worker = new Worker("webWorker.js");
+
+worker.addEventListener("message", function(event){ // nerima post dari webWorker.js
+    console.log(`Recieve message from web worker: ${event.data}`);
+})
+
+var a = 3;
+function buttonClick() {
+    console.log("Start Log");
+    worker.postMessage(1000,a); //[post param ke] listener di webWorker.js
+    console.log("Finish Log");
+}
+</script>
+<button onclick="buttonClick()"> Search Product</button>
+<img src="last message.png" alt="" srcset="">
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custructor functions VersiLama</title>
+</head>
+<body>
+    <script>
+        //Teori
+        /* 
+            -Di dasar udah belajar variabel tapi tipe datanya object
+            -Jika membuat object menggunakan tipe data object
+                akhirnya objectnya selalu unik
+            -Disamping itu dalam OOP, biasanya kita akn membuat class sbg cetakan,
+                sehingga bisa membuat object dengan karakteristik yang sama berkali2
+                tanpa harus mendeklarasikan object berkali kali seperti menggunakan tipe data object
+        */
+
+        //Membuat object Dasar 
+        const adek ={
+            firstName: "Adeks"
+        }
+        const krist ={
+            firstName: "Kristiyanto"
+        }
+
+        //-------------------------------------------------
+        //sekarang bahas OOP versi lama dulu
+        //Implementasi OOP Versi lama menggunakan function
+        //function ini disebut Constructor Function
+
+        function PersonManusia() {
+            //tidak menggunakan camel Case,
+            //tiap depannya harus huruf besar
+            //yang nanti ini akan dianggap class
+        }
+
+        //membuat object menggunakan kata kunci 'new' 
+        //kita perdalam PersonManusia()
+
+        const objectAdek = new PersonManusia();
+        const objectKrist = new PersonManusia();
+
+        //dua object itu (objectAdek, objectKrist) terikat sama class PersonManusia()
+    </script>
+</body>
+</html>

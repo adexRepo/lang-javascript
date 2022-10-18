@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipe Data String</title>
+</head>
+<body>
+    <script>
+        //note
+        // write itu untuk 1 baris
+        // writeln itu untuk baris selanjutnya
+        //tipe data yg berisikan kosong atau karakter
+        //menggunakan petik 2 atau petik 1 atau backtick
+        document.write("test1 pakai petik 2");
+        document.write("</br>");
+        document.writeln('test2  pakai petik 3');
+        document.write('</br>');
+        document.writeln(`test3 pakai backtick`);
+        document.writeln('</br>');;
+        
+        //menambahkan string concat
+        document.writeln(`adek` + " krist" + 'iyanto');
+        document.writeln('</br>');
+        
+        //Escpe Sequence di String (khusus String)
+        document.writeln(`\n` + " -->" + ' ENTER');
+        document.write('</br>'); 
+        document.writeln(`\t` + " -->" + ' TAB');
+        document.write('</br>');
+        document.writeln(`\'` + " -->" + ' petik1');
+        document.write('</br>');
+        document.writeln(`\"` + " -->" + ' petik2');
+        document.write('</br>');
+        document.writeln(`\\` + " -->" + ' slash kiri');
+        document.writeln('</br>');
+        // contohnya :
+        
+        document.write("<textarea cols='100' rows='8'>");
+        document.write(" Adek \n kristiyan \n to");
+        document.writeln('<\n>');
+        document.writeln("\\Adek \\ kristiyanto");
+        document.writeln("\"Adek kristiyanto\"");
+        document.writeln("\'Adek kristiyanto\'");
+        document.write("</textarea>");
+        
+        //String Template
+        let a = 90;
+        document.write("<textarea cols='50' rows ='4'>");
+        document.writeln (`INI STRING TEMPLATE`);
+        document.writeln (`Selamat nilai anda ${a}`);
+        document.write("</textarea>");
+        
+        </script>
+</body>
+</html>

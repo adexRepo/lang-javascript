@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alias</title>
+</head>
+<body>
+    <script type="module">
+
+        //Teori
+        /* 
+            Saatkita membuat aplikasi JavaScript, semakin lama kemungkinana module akan semakin banyak
+            Dan bisa saja akan ada nama variable atau nama function atau nama class yang sama antar module
+            Hal ini akan menyulitkan ketika ada module yang menggunakan beberapa module, namun ternyata variabel, 
+            function atau class nya memiliki nama yang sama
+            Untungnya, module memiliki fitur alias, dimana kita bisa menggunakan nama variable, function atau class
+        */
+
+        //Alias di Export (NOT RECOMMENDED)
+        /* 
+            kita dapat menggunakan alias ketika export di module
+            Caranya menggunakan kata kunci as, lalu diikuti dengan nama aliasnya :
+            export {variabel as variabool , function as functioon, class as classo}
+            */
+        
+        import { perusahaan,total,Perusahaan } from "./scripts/10_aliasInExport.mjs";
+        
+        console.log(perusahaan);
+        console.log(total(10,11));
+
+        const aliasExport = new Perusahaan("arguments");
+
+        //Alias di Import (RECOMMENDED)
+        /* 
+        bikin aliasnya di import jadi di eksport ga perlu diubah apa2
+        caranya sama pake as
+        import {variabel as variabool , function as functioon, class as classo} from "./lokasi-module.mjs"
+        */
+
+        console.log("--------------------------------");
+        import { company as kantor,sum as jumlah, Company as Kantor } from "./scripts/10_aliasInImport.mjs";
+        
+        console.log(kantor);
+        console.log(jumlah(10,5));
+
+        const aliasImport = new Kantor("arguments");
+
+    </script>
+</body>
+</html>

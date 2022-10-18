@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anonymouse Function</title>
+</head>
+<body>
+    <script>
+        //membuat function tanpa nama
+        //ini contoh anonymous function kedalam variabel
+        let say = function (name) { //gaada namannya
+            console.info(`Hello ${name}`);
+        }
+
+        say("Jancok");
+
+        //ini contoh anonymous function keadalam parameter
+        function timJangkrik(callBack) {
+            callBack("sakit")
+        }
+
+        timJangkrik(say); //contoh satu
+        timJangkrik(function (params) {
+            document.writeln(`<p>Hii ${name}</p>`)
+        })//jika ada 2 parameter masukin , (koma) setelah kurung kurawal
+        //anonymous function ccuman bisa dipake sekali / gabisa dipanggil lagi
+    </script>
+</body>
+</html>

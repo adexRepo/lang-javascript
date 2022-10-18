@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Default And Named Export</title>
+</head>
+<body>
+    <script type="module">
+
+        //Teori
+        /* 
+            Dalam satu module, kita bisa menggabungkan export default dan export named
+            Yang tidak boleh adalah, dalam satu module, membuat lebih dari satu default
+            Cara import default dan Named secara bersamaan bisa menggunakan perintah :
+
+            import defaultAlias,{named1,named2} from "./lokasi-module.mjs"
+            import {default as defaultAlias, named1,named2} from "./lokasi-module.mjs"
+
+            intinya satu default bisa banyak nama
+        */
+
+        import penulis, {content, title } from "./scripts/12_defaultAndNamed.mjs";
+        //atau bisa gini (dicomment2 aja)
+        //import { default as authorNamed, content,title } from "./scripts/12_defaultAndNamed.mjs";
+    
+        console.log(penulis);
+        //console.log(authorNamed);
+        console.log(content);
+        console.log(title);
+    
+
+        //REKOMENDASI
+        /* 
+            Bedakan antara default dan named, karena jika digabungkan kadang akan membingungkan ketika melakukan import
+            Sebisa mungkin selalu gunakan export named dibandingkan export default
+        */
+    </script>
+</body>
+</html>

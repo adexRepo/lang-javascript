@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <titl> Private Method </title>
+</head>
+<body>
+    <script>
+
+        //Sama seperti field, terdapat proposal juga untuk menambah fitur
+        //private method di EcmaScript
+        //Dengan demikian, accses modifier private juga bisa digunakan di method
+        //Caranya pun sama, dengan menambahkan #diawal method, maka secara otomatis
+        // method tersebut private
+        //Ingat fitur ini (08/2021) masih dalam tahap pengembangan, belum benar-benar menjadi standart
+        //EcmaScript, jadi mungkin tidak semua browser mendukung fitur ini
+        //https://github.com/tc39/proposal-private-methods (bisa di cek takut berubah)
+
+        class Person {
+            say(name){ //method ini untuk mengakses ke method private karena dia juga didalem classnya
+                if (name) {
+                    this.#sayWithName(name);
+                }else{
+                    this.#sayWithoutName(name);
+                }
+            }
+
+            #sayWithoutName(){
+                console.log(`Hello`);
+            }
+            
+            #sayWithName(name){
+                console.log(`Hello ${name}`);
+            }
+        }
+
+        const dupin = new Person()
+
+        dupin.say("Dupin Hibernate");
+        //dupin.#sayWithName("Adek");
+        //kalo baris 42 tidak dicomment akan error
+        //karena dia coba akses ke method private
+
+    </script>
+</body>
+</html>

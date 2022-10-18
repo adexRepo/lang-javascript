@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Logika</title>
+</head>
+<body>
+    <script>
+        // and(&&), or(||), negation(!)
+        // untuk tipe data boolean
+        //and --> hasilnya true jika dua2nya sama
+        //or --> hasilnya true jika salah satu dari 2 ada yg true
+        //negation --> jika a true maka !a = a false dan sebaliknya
+
+        const nilaiUjian = 78;
+        const nilaiAbsensi =78;
+
+        const lulusUjian = nilaiUjian>75;
+        const lulusAbsensi = nilaiAbsensi >75;
+
+        const lulus_And = lulusUjian && lulusAbsensi;
+        const lulus_Or = lulusUjian || lulusAbsensi;
+        const lulus_negasi = !lulusUjian && lulusAbsensi;
+
+        document.writeln(`<p>`+lulus_And+`</p>`);
+        document.writeln(`<p>`+lulus_Or+`</p>`);
+        document.writeln(`<p>`+lulus_negasi+`</p>`);
+    </script>
+</body>
+</html>

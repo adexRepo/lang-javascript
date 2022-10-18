@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Getter And Setter</title>
+</head>
+<body>
+    <script>
+
+        // Teori
+        /* 
+            Date juga memiliki banyak sekali method untuk mendapatkan
+            informasi date dan juga mengubah informasi date
+            atau istilahnya getter dan setter
+            pembahasan sebelumnya itu staticnya, kalo ini di instance nya
+            link lengkapnya:
+            https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#instance_methods
+        */
+
+        const date = new Date();
+        //date.setFullYear(2025); jika ini tidak di comment maka tahun jadi 2025
+
+        console.log("tahun : "+date.getFullYear());
+        console.log("bulan : "+date.getMonth());
+        console.log("tanggal : "+date.getDate());
+        console.log("3 : "+date.getDay());
+        console.log("jam : "+date.getHours());
+        console.log("menit : "+date.getMinutes());
+        console.log("detik : "+date.getSeconds());
+        console.log("milli detik : "+date.getMilliseconds());
+        console.log("unix timestamp : "+date.getTime());
+        console.log("json : "+date.toJSON());
+        console.log("toString : "+date.toString());
+        console.log("timeTostring : "+date.toTimeString());
+        console.log("valueOf : "+date.valueOf());
+        console.log("TimeZoneOFfset : "+date.getTimezoneOffset());
+
+    </script>
+</body>
+</html>

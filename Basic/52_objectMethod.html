@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Method</title>
+</head>
+<body>
+    <script>
+        //property object
+        //function didalam object /  salahsatu property di object
+
+        const person ={
+            name: "Adek",
+            sayHello : function (name) {
+                console.log(`Hello ${name}`);
+            }
+        };
+
+        person.sayHello("Adek Kristiyanto") //Hello Adek Kristiyanto
+        //jika kita gini doang
+        person.sayHello(); //Hello undefine
+        //jika gini
+        person.sayHello(person.name);//Hello Adek
+    </script>
+</body>
+</html>
